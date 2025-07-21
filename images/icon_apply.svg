@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="svg2253" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 682.67 682.67">
+  <defs>
+    <clipPath id="clippath">
+      <rect width="682.67" height="682.67" style="fill: none;"/>
+    </clipPath>
+  </defs>
+  <g id="g2259">
+    <g id="g2261">
+      <g style="clip-path: url(#clippath);">
+        <g id="g2263">
+          <g id="g2269">
+            <path id="path2271" d="M274.67,656h-114.67c-73.64,0-133.33-59.69-133.33-133.33V160c0-73.64,59.69-133.33,133.33-133.33h362.67c73.64,0,133.33,59.69,133.33,133.33v133.33" style="fill: none; stroke: #000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 53.33px;"/>
+          </g>
+          <g id="g2273">
+            <path id="path2275" d="M284,186.67c0,29.46-23.88,53.33-53.33,53.33s-53.33-23.88-53.33-53.33,23.88-53.33,53.33-53.33,53.33,23.88,53.33,53.33Z" style="fill: none; stroke: #000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 53.33px;"/>
+          </g>
+          <g id="g2277">
+            <path id="path2279" d="M384,258.67h165.33" style="fill: none; stroke: #000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 53.33px;"/>
+          </g>
+          <g id="g2281">
+            <path id="path2283" d="M157.33,445.33h194.67" style="fill: none; stroke: #000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 53.33px;"/>
+          </g>
+          <g id="g2285">
+            <path id="path2287" d="M157.33,538.67h88" style="fill: none; stroke: #000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 53.33px;"/>
+          </g>
+          <g id="g2289">
+            <path id="path2291" d="M635.3,402.03h0c27.6,27.6,27.6,72.34,0,99.94l-93.48,93.48c-23.21,23.21-52.76,39.02-84.94,45.45l-75.55,15.1,15.1-75.55c6.43-32.18,22.25-61.73,45.45-84.94l93.48-93.48c27.6-27.6,72.34-27.6,99.94,0Z" style="fill: none; stroke: #000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 53.33px;"/>
+          </g>
+          <g id="g2293">
+            <path id="path2295" d="M384,165.33h165.33" style="fill: none; stroke: #000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 53.33px;"/>
+          </g>
+          <g id="g2297">
+            <path id="path2299" d="M301.33,346.67c-16.32-14.85-38.16-24-62.2-24h-16.93c-24.04,0-45.88,9.15-62.2,24" style="fill: none; stroke: #000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 53.33px;"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
