@@ -15,7 +15,7 @@
 
   span {
     height: 100%;
-    width: calc((100% - (20px * 11))/12);
+    width: calc((100% - (20px * 11)) / 12);
     display: block;
     padding: 1px;
     background: $colorPrimary;
@@ -44,11 +44,10 @@
     margin: 0;
   }
 
-
   .card {
     padding: 20px;
     border-radius: var(--borderRadius);
-    box-shadow: 0px 4px 16px -4px rgba(34, 34, 34, 0.30);
+    box-shadow: 0px 4px 16px -4px rgba(34, 34, 34, 0.3);
   }
 }
 
@@ -58,14 +57,14 @@
   gap: #{$flexTemplateGap}px;
   position: relative;
 
-  @include screen('mobile') {
+  @include screen("mobile") {
     flex-direction: column;
   }
 
   .col {
     flex-grow: 1;
 
-    @include screen('mobile') {
+    @include screen("mobile") {
       width: 100% !important;
     }
   }
@@ -74,7 +73,6 @@
 .flexTpl_12 {
   display: block;
 }
-
 
 .flexTpl_8_4 {
   .col {
@@ -111,7 +109,6 @@
       flex: 1 1 flexWidth($flexTemplateGap, 7);
     }
   }
-
 }
 
 .flexTpl_7_5 {
@@ -131,7 +128,7 @@
     &:nth-child(1) {
       flex: 1 1 flexWidth($flexTemplateGap, 9);
 
-      @include screen('tablet') {
+      @include screen("tablet") {
         flex: 1 1 flexWidth($flexTemplateGap, 8);
       }
     }
@@ -139,7 +136,7 @@
     &:nth-child(2) {
       flex: 1 1 flexWidth($flexTemplateGap, 3);
 
-      @include screen('tablet') {
+      @include screen("tablet") {
         flex: 1 1 flexWidth($flexTemplateGap, 4);
       }
     }
@@ -151,7 +148,7 @@
     &:nth-child(1) {
       flex: 1 1 flexWidth($flexTemplateGap, 3);
 
-      @include screen('tablet') {
+      @include screen("tablet") {
         flex: 1 1 flexWidth($flexTemplateGap, 4);
       }
     }
@@ -159,7 +156,7 @@
     &:nth-child(2) {
       flex: 1 1 flexWidth($flexTemplateGap, 9);
 
-      @include screen('tablet') {
+      @include screen("tablet") {
         flex: 1 1 flexWidth($flexTemplateGap, 8);
       }
     }
@@ -171,7 +168,7 @@
     &:nth-child(1) {
       flex: 1 1 flexWidth($flexTemplateGap, 3);
 
-      @include screen('tablet') {
+      @include screen("tablet") {
         flex: 1 1 flexWidth($flexTemplateGap, 6);
       }
     }
@@ -179,15 +176,15 @@
     &:nth-child(2) {
       flex: 1 1 flexWidth($flexTemplateGap, 6);
 
-      @include screen('tablet') {
-        flex: 1 1 100%
+      @include screen("tablet") {
+        flex: 1 1 100%;
       }
     }
 
     &:nth-child(3) {
       flex: 1 1 flexWidth($flexTemplateGap, 3);
 
-      @include screen('tablet') {
+      @include screen("tablet") {
         flex: 1 1 flexWidth($flexTemplateGap, 6);
       }
     }
@@ -199,7 +196,7 @@
     &:nth-child(1) {
       flex: 1 1 flexWidth($flexTemplateGap, 3);
 
-      @include screen('tablet') {
+      @include screen("tablet") {
         flex: 1 1 flexWidth($flexTemplateGap, 6);
       }
     }
@@ -207,7 +204,7 @@
     &:nth-child(2) {
       flex: 1 1 flexWidth($flexTemplateGap, 3);
 
-      @include screen('tablet') {
+      @include screen("tablet") {
         flex: 1 1 flexWidth($flexTemplateGap, 6);
       }
     }
@@ -215,8 +212,8 @@
     &:nth-child(3) {
       flex: 1 1 flexWidth($flexTemplateGap, 6);
 
-      @include screen('tablet') {
-        flex: 1 1 100%
+      @include screen("tablet") {
+        flex: 1 1 100%;
       }
     }
   }
@@ -227,15 +224,15 @@
     &:nth-child(1) {
       flex: 1 1 flexWidth($flexTemplateGap, 6);
 
-      @include screen('tablet') {
-        flex: 1 1 100%
+      @include screen("tablet") {
+        flex: 1 1 100%;
       }
     }
 
     &:nth-child(2) {
       flex: 1 1 flexWidth($flexTemplateGap, 3);
 
-      @include screen('tablet') {
+      @include screen("tablet") {
         flex: 1 1 flexWidth($flexTemplateGap, 6);
       }
     }
@@ -243,7 +240,7 @@
     &:nth-child(3) {
       flex: 1 1 flexWidth($flexTemplateGap, 3);
 
-      @include screen('tablet') {
+      @include screen("tablet") {
         flex: 1 1 flexWidth($flexTemplateGap, 6);
       }
     }
@@ -252,16 +249,15 @@
 
 .flexTpl_2_2_8 {
   .col {
-
     &:nth-child(1) {
       flex-shrink: 0;
       flex: 1 1 flexWidth($flexTemplateGap, 2);
 
-      @include screenMax('1200') {
+      @include screenMax("1200") {
         flex: 1 1 flexWidth($flexTemplateGap, 3);
       }
 
-      @include screen('tablet') {
+      @include screen("tablet") {
         flex: 1 1 flexWidth($flexTemplateGap, 6);
       }
     }
@@ -270,11 +266,11 @@
       flex-shrink: 0;
       flex: 1 1 flexWidth($flexTemplateGap, 2);
 
-      @include screenMax('1200') {
+      @include screenMax("1200") {
         flex: 1 1 flexWidth($flexTemplateGap, 3);
       }
 
-      @include screen('tablet') {
+      @include screen("tablet") {
         flex: 1 1 flexWidth($flexTemplateGap, 6);
       }
     }
@@ -282,12 +278,12 @@
     &:nth-child(3) {
       flex: 1 1 flexWidth($flexTemplateGap, 8);
 
-      @include screenMax('1200') {
+      @include screenMax("1200") {
         flex: 1 1 flexWidth($flexTemplateGap, 6);
       }
 
-      @include screen('tablet') {
-        flex: 1 1 100%
+      @include screen("tablet") {
+        flex: 1 1 100%;
       }
     }
   }
@@ -321,7 +317,7 @@
   .col {
     width: itemWidth($flexTemplateGap, 3);
 
-    @include screen('tablet') {
+    @include screen("tablet") {
       width: 100%;
     }
   }
@@ -331,7 +327,7 @@
   .col {
     width: itemWidth($flexTemplateGap, 4);
 
-    @include screen('tablet') {
+    @include screen("tablet") {
       width: itemWidth($flexTemplateGap, 2);
     }
   }
@@ -341,7 +337,7 @@
   .col {
     width: itemWidth($flexTemplateGap, 5);
 
-    @include screen('tablet') {
+    @include screen("tablet") {
       width: itemWidth($flexTemplateGap, 3);
     }
   }
@@ -351,11 +347,11 @@
   .col {
     width: itemWidth($flexTemplateGap, 6);
 
-    @include screen('notebook') {
+    @include screen("notebook") {
       width: itemWidth($flexTemplateGap, 4);
     }
 
-    @include screen('tablet') {
+    @include screen("tablet") {
       width: itemWidth($flexTemplateGap, 3);
     }
   }

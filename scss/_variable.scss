@@ -18,7 +18,7 @@ $colorWordDark: #111111;
 $colorDisabled: #dee0e3;
 $colorError: #c40000;
 $checkboxRadio: #97a3b6;
-$colorAccessibility: #c40000;
+$colorAccessibility: #ff3d9b;
 
 // nav顏色設定
 $surface: $colorPrimary;
@@ -29,12 +29,12 @@ $aColor: $colorSecondary;
 $aHover: color.mix($aColor, #000, 90%);
 
 //btn
-$btnPrimary: $colorPrimary;
-$btnPrimaryHover: $colorPrimaryDark;
+$btnPrimary: #000;
+$btnPrimaryHover: #ffdb01;
 $btnPrimaryLightHover: $colorPrimaryLight;
 
 $btnSecondary: $colorSecondary;
-$btnSecondaryHover: $colorSecondaryDark;
+$btnSecondaryHover: #000;
 $btnSecondaryLightHover: $colorSecondaryLight;
 
 $btnNormal: #dee0e3;
@@ -89,7 +89,7 @@ $NotoSansTC: "Noto Sans TC", Arial, "微軟正黑體", "Microsoft JhengHei",
 $mainFontSize: 16;
 
 // 內容尺寸設定
-$domWidth: 1380px;
+$domWidth: 1440px;
 
 // flexTemplate gap值
 $flexTemplateGap: 24;

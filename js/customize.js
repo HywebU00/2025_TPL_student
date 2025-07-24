@@ -120,9 +120,7 @@ window.addEventListener('load', () => {
       prevEl: '.noticeSlider .swiperPrev', //自行設定樣式
       disabledClass: 'swiperArrow-disabled', //不可點選樣式
     },
-    autoplay: {
-      delay: 5000,
-    },
+
     on: {
       init: function (swiper) {
         swiperA11Fn(swiper);
@@ -246,6 +244,9 @@ window.addEventListener('load', () => {
     },
     breakpoints: {
       100: {
+        slidesPerView: 1,
+      },
+      575: {
         slidesPerView: 2,
       },
       767: {

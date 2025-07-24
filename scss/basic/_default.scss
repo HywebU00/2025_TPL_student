@@ -52,68 +52,15 @@ body {
   flex-direction: column;
   min-height: 100vh;
 
-  @include screen('tablet') {
+  @include screen("tablet") {
     padding-top: 60px;
-  }
-}
-
-// main
-main {
-  width: 100%;
-  position: relative;
-  padding-bottom: 80px;
-  flex-grow: 1;
-
-  &.innerPage {
-    padding-top: 40px;
-    background: #F8F8F8;
-  }
-
-  .hasSide {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-
-    @include screen('tablet') {
-      flex-direction: column;
-    }
-
-    .mainContentBox {
-      flex-grow: 1;
-      @include transition(0.3);
-
-      @include screen('tablet') {
-        width: 100%;
-      }
-    }
-  }
-
-  .mainContentBox {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-
-    .pageTitle {
-      font-size: Rem(36);
-      margin: 0;
-      font-weight: 600;
-    }
-
-    .mainContent {
-      width: 100%;
-    }
-  }
-
-  &.innerPage:not(.hasSide) section {
-    width: 100%;
-    margin: 0 auto;
   }
 }
 
 .codeBox {
   padding: 20px;
   border-radius: 8px;
-  background: #DEE0E3;
+  background: #dee0e3;
   color: #383838;
 }
 
@@ -123,8 +70,8 @@ input:not([type="checkBox"], [type="radio"]) {
   display: block;
   padding: 6px 12px;
   border-radius: 4px;
-  border: #DEE0E3 1px solid;
-  background: #FFF;
+  border: #dee0e3 1px solid;
+  background: #fff;
 }
 
 select,
@@ -161,7 +108,7 @@ p {
 }
 
 .floatBox::after {
-  content: '';
+  content: "";
   display: block;
   clear: both;
 }
@@ -180,7 +127,7 @@ p {
     width: flexWidth($flexTemplateGap, 5);
     margin-bottom: 30px;
 
-    @include screen('mobile') {
+    @include screen("mobile") {
       width: 100%;
       margin: 20px 0;
       float: none;
@@ -222,13 +169,13 @@ h6 {
   }
 }
 
-
 .container {
-  max-width: calc($domWidth + 60px);
-  width: 100%;
+  max-width: $domWidth;
+  // width: 100%;
   padding: 0 30px;
   margin: 0 auto;
   position: relative;
+  box-sizing: content-box;
 }
 
 .overlay {
@@ -243,7 +190,7 @@ h6 {
   background: rgba(#000, 0.8);
   cursor: pointer;
 
-  @include screen('tablet') {
+  @include screen("tablet") {
     top: 60px;
     height: calc(100vh - 60px);
     height: calc(100dvh - 60px);
@@ -278,21 +225,21 @@ nav {
   padding: 0 0.5em;
   height: 2em;
   line-height: 2em;
-  background: $colorPrimary;
-  color: #fff;
+  background: #ffdb01;
+  color: #000;
   text-decoration: none;
   z-index: 999999999999;
   opacity: 0;
   transition: 0.5s;
   border-radius: 0px 0px 4px 4px;
   color: #fff;
-
+  width: auto !important;
   &:focus-visible,
   &:hover {
     top: 0;
     opacity: 1;
     box-shadow: none;
-    color: #fff;
+    color: #000;
   }
 }
 
@@ -301,7 +248,7 @@ nav {
   right: 34px;
   bottom: 5vh;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.50);
+  background: rgba(0, 0, 0, 0.5);
 
   display: flex;
   width: 60px;
@@ -316,7 +263,7 @@ nav {
   @include transition(0.3);
   opacity: 0;
 
-  @include screen('tablet') {
+  @include screen("tablet") {
     width: 40px;
     height: 40px;
     right: 10px;
@@ -325,7 +272,7 @@ nav {
   }
 
   &::before {
-    content: '';
+    content: "";
     width: 10px;
     height: 10px;
     border-top: 2px solid #fff;
@@ -351,41 +298,6 @@ nav {
   figcaption {
     line-height: 1.4;
     margin-top: 5px;
-  }
-}
-
-.navFloat {
-  position: fixed;
-  right: 22px;
-  top: 30%;
-
-  @include screen('tablet') {
-    right: 10px;
-  }
-
-  ul {
-    @include liReset;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-
-    li {
-      line-height: 0;
-    }
-
-    a {
-      display: block;
-      line-height: 0;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      @include transition(0.3);
-
-      @include screen('tablet') {
-        width: 40px;
-        height: 40px;
-      }
-    }
   }
 }
 

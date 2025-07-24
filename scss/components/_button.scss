@@ -5,7 +5,8 @@
   margin: 0;
   padding: 6px 18px;
   border: none;
-  border-radius: var(--borderRadius2);
+  // border-radius: var(--borderRadius2);
+  border-radius: 30px;
   font-weight: 400;
   gap: 6px;
   line-height: 2;
@@ -58,7 +59,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  @include btn($colorPrimary);
+  @include btn(#000);
 
   &.bd {
     color: $colorPrimary;
@@ -84,7 +85,7 @@ button {
 
   &.active,
   &:hover {
-    color: #fff;
+    color: #000;
     background: $btnPrimaryHover;
   }
 }
@@ -94,7 +95,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  @include btn($colorSecondary);
+  @include btn(#737373);
 
   &.bd {
     color: $colorSecondary;
@@ -158,7 +159,6 @@ button {
     background: $btnNormalHover;
   }
 }
-
 
 .bp {
   display: flex;

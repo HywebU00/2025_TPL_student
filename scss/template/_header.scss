@@ -3,7 +3,7 @@ header {
   width: 100%;
   position: relative;
   z-index: 55;
-  background: url("../images/bg.png") no-repeat center center fixed;
+
   @include screen("tablet") {
     position: fixed;
     top: 0;
@@ -13,6 +13,11 @@ header {
   }
 
   .headTop {
+    padding-top: 26px;
+    padding-bottom: 20px;
+    @include screen("tablet") {
+      padding: 0 60px;
+    }
     &:has(.topSearch) {
       .topNav {
         width: auto;
@@ -20,16 +25,7 @@ header {
       }
     }
     .container {
-      padding: 26px 90px 20px 90px;
-      @include screen("notebook") {
-        padding: 26px 30px 20px 30px;
-      }
-      @include screen("tablet") {
-        padding: 0 30px;
-      }
-      @include screen("mobile") {
-        padding: 0;
-      }
+      max-width: 1140px;
     }
   }
 
@@ -65,8 +61,8 @@ header {
         background-size: auto 36px;
       }
       @include screen("mobile") {
-        background: url("../images/logo_w.png") no-repeat 60px center;
-        background-size: auto 24px;
+        background: url("../images/logo_w.png") no-repeat left center;
+        background-size: auto 22px;
       }
     }
   }

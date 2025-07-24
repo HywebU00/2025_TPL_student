@@ -15,7 +15,6 @@
     top: 0;
     left: 0;
     width: 100%;
-    background: #fff;
   }
 }
 
@@ -342,9 +341,7 @@
 
 // 電腦版選單 一般 --------------------------------------------------------
 .mainMenu {
-  .container {
-    background: #000;
-  }
+  background: #000;
 }
 .menu {
   width: 100%;
@@ -429,6 +426,10 @@
 
       &.active,
       &:hover {
+        > a {
+          color: #000;
+          background: #ffdb01;
+        }
         &.hasChild {
           & > a {
             color: #fff;

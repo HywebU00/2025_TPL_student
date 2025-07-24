@@ -15,7 +15,7 @@
   </head>
   <body>
     <!-- wrapper Start -->
-    <div class="wrapper mp">
+    <section class="wrapper mp">
       <!-- 直接跳主內容區 -->
       <a class="goCenter" href="#aC">按Enter到主內容區</a>
 
@@ -114,76 +114,69 @@
           aria-label="主要內容區"
           >:::</a
         >
-        <div class="mainBox">
+        <section class="mainBox">
+          <!-- mpSlider Start -->
+          <div class="mpSlider">
+            <!-- 如果需要自動播放，無障礙需要增加此按鈕 -->
+            <button
+              type="button"
+              class="autoPlaySwitch"
+              data-info-play="暫停中，點我播放"
+              data-info-stop="播放中，點我暫停"
+            ></button>
+            <div class="swiperBox">
+              <!-- swiper 左邊箭頭-->
+              <button class="swiperPrev swiperArrow">上一筆</button>
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <a href="#">
+                      <div class="pic">
+                        <img src="images/mpSlider1.jpg" alt="第1張圖說" />
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#">
+                      <div class="pic">
+                        <img src="https://plus.unsplash.com/premium_photo-1752773338136-839899a0abde?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="第1張圖說" />
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- swiper 右邊箭頭-->
+              <button class="swiperNext swiperArrow">下一筆</button>
+            </div>
+            <!--分頁-->
+            <div class="swiperPagination"></div>
+          </div>
+          <!-- mpSlider End -->
+          <!-- 選單 Start -->
           <section>
             <div class="container">
-              <!-- mpSlider Start -->
-              <div class="mpSlider">
-                <!-- 如果需要自動播放，無障礙需要增加此按鈕 -->
-                <button
-                  type="button"
-                  class="autoPlaySwitch"
-                  data-info-play="暫停中，點我播放"
-                  data-info-stop="播放中，點我暫停"
-                ></button>
-                <div class="swiperBox">
-                  <!-- swiper 左邊箭頭-->
-                  <button class="swiperPrev swiperArrow">上一筆</button>
-                  <div class="swiper">
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide">
-                        <a href="#">
-                          <div class="pic">
-                            <img src="images/mpSlider1.jpg" alt="第1張圖說" />
-                          </div>
-                        </a>
-                      </div>
-                      <div class="swiper-slide">
-                        <a href="#">
-                          <div class="pic">
-                            <img src="images/mpSlider1.jpg" alt="第1張圖說" />
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- swiper 右邊箭頭-->
-                  <button class="swiperNext swiperArrow">下一筆</button>
-                </div>
-                <!--分頁-->
-                <div class="swiperPagination"></div>
+              <div class="menuBlock">
+                <a href="#" class="about">
+                  <div class="title">關於公共服務系統平台</div>
+                </a>
+                <a href="#" class="signup">
+                  <div class="title">我要報名</div>
+                </a>
+                <a href="#" class="history">
+                  <div class="title">歷史紀錄查詢</div>
+                </a>
+                <a href="#" class="reservation">
+                  <div class="title">預約管理</div>
+                </a>
               </div>
-              <div class="blockTypeB">
-                <h2 class="sectionTitle">主標題</h2>
-                <ul class="listBox">
-                  <li>
-                    <a href="#">
-                      <i><img src="images/demo/icon/icon01.svg" alt="" /></i>
-                      <div class="title">我是標題標題</div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i><img src="images/demo/icon/icon02.svg" alt="" /></i>
-                      <div class="title">我是標題標題</div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i><img src="images/demo/icon/icon03.svg" alt="" /></i>
-                      <div class="title">我是標題標題</div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i><img src="images/demo/icon/icon04.svg" alt="" /></i>
-                      <div class="title">我是標題標題</div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
+            </div>
+          </section>
+          <!-- 選單 End -->
+          <section>
+            <div class="container">
               <div class="flexTpl_2">
                 <div class="col">
+                  <!-- 系統公告 Start -->
                   <h2 class="sectionTitle">系統公告</h2>
                   <div class="noticeSlider">
                     <div class="swiperBox">
@@ -197,7 +190,7 @@
                                 本館為公共圖書館，肩負社會教育的功能，為提升學生關懷生活環境及參與公共事務的意願與熱忱，培養多元價值觀，特提供學生回饋社區及社會的生活體驗...
                               </div>
                               <div class="noticeText">
-                                本館為公共圖書館，肩負社會教育的功能，為提升學生關懷生活環境及參與公共事務的意願與熱忱，培養多元價值觀，特提供學生回饋社區及社會的生活體驗...
+                                本館為公共圖書館，肩負社會教育的功能，為提升學生關懷生活環境及參與公共事務的意願與熱忱，培養多元價值觀，特提供學生回饋社區及社會的生活體驗，本館為公共圖書館，肩負社會教育的功能，為提升學生關懷生活環境及參與公共事務的意願與熱忱，培養多元價值觀，特提供學生回饋社區及社會的生活體驗，本館為公共圖書館，肩負社會教育的功能，為提升學生關懷生活環境及參與公共事務的意願與熱忱，培養多元價值觀，特提供學生回饋社區及社會的生活體驗
                               </div>
                               <div class="noticeDate">2025/06/01</div>
                             </a>
@@ -208,7 +201,7 @@
                                 本館為公共圖書館，肩負社會教育的功能，為提升學生關懷生活環境及參與公共事務的意願與熱忱，培養多元價值觀，特提供學生回饋社區及社會的生活體驗...
                               </div>
                               <div class="noticeText">
-                                本館為公共圖書館，肩負社會教育的功能，為提升學生關懷生活環境及參與公共事務的意願與熱忱，培養多元價值觀，特提供學生回饋社區及社會的生活體驗...
+                                本館為公共圖書館，肩負社會教育的功能，為提升學生關懷生活環境及參與公共事務的意願與熱忱，培養多元價值觀，特提供學生回饋社區及社會的生活體驗，本館為公共圖書館，肩負社會教育的功能，為提升學生關懷生活環境及參與公共事務的意願與熱忱，培養多元價值觀，特提供學生回饋社區及社會的生活體驗，本館為公共圖書館，肩負社會教育的功能，為提升學生關懷生活環境及參與公共事務的意願與熱忱，培養多元價值觀，特提供學生回饋社區及社會的生活體驗
                               </div>
                               <div class="noticeDate">2025/06/01</div>
                             </a>
@@ -219,101 +212,108 @@
                       <button class="swiperNext swiperArrow">下一筆</button>
                     </div>
                     <!--分頁-->
-                    <div class="swiperPagination"></div>
+                    <!-- <div class="swiperPagination"></div> -->
                   </div>
+                  <!-- 系統公告 End -->
                 </div>
                 <div class="col">
+                  <!-- 立即登入 Start -->
                   <h2 class="sectionTitle">立即登入</h2>
                   <div class="login">
                     <h3>學生公共服務系統登入</h3>
-                    <form action="" class="formBox">
-                      <div class="gridBox">
-                        <div class="formList inline">
-                          <label class="formListTitle" for="formItem1"
-                            ><em aria-label="必填">*</em>帳號</label
-                          >
-                          <div class="formContent">
-                            <input
-                              type="text"
-                              name="formItem1"
-                              id="formItem1"
-                            />
-                          </div>
-                        </div>
-                        <div class="formList inline">
-                          <label class="formListTitle" for="formItem9"
-                            ><em aria-label="必填">*</em>密碼</label
-                          >
-                          <div class="formContent">
-                            <div class="inputBox">
-                              <i class="i_lock_dk"></i>
+                    <form action="">
+                      <div class="formBox">
+                        <div class="gridBox">
+                          <div class="formList inline">
+                            <label class="formListTitle" for="formItem1"
+                              ><em aria-label="必填">*</em>帳號</label
+                            >
+                            <div class="formContent">
                               <input
-                                type="password"
-                                name="password"
-                                id="formItem90"
-                                placeholder="請輸入密碼"
-                                required
+                                type="text"
+                                name="formItem1"
+                                id="formItem1"
+                                placeholder="請輸入借閱證號或身分證字號"
                               />
-                              <button
-                                class="formEyes"
-                                type="button"
-                                data-show="顯示密碼"
-                                data-hide="隱藏密碼"
-                              ></button>
-                            </div>
-                            <div class="help">
-                              <a href="#">忘記密碼</a>
                             </div>
                           </div>
-                        </div>
-                        <div class="formList inline">
-                          <label class="formListTitle" for="code"
-                            ><em aria-label="必填">*</em>驗證碼</label
-                          >
-                          <div class="formContent inline">
-                            <img
-                              src="images/basic/captcha.gif"
-                              class="captcha"
-                              alt="驗證碼圖片"
-                              tabindex="0"
-                            />
-                            <button class="btnPrimary" type="button">
-                              <i class="i_voice_w"></i>語音播放
-                            </button>
-                            <button class="btnPrimary" type="button">
-                              <i class="i_refresh_w"></i>重新整理
-                            </button>
-                            <input
-                              type="text"
-                              name=""
-                              id="code"
-                              placeholder="請輸入文字"
-                            />
+                          <div class="formList inline">
+                            <label class="formListTitle" for="formItem9"
+                              ><em aria-label="必填">*</em>密碼</label
+                            >
+                            <div class="formContent">
+                              <div class="inputBox">
+                                <input
+                                  type="password"
+                                  name="password"
+                                  id="formItem90"
+                                  placeholder="請輸入密碼"
+                                  required
+                                />
+                                <button
+                                  class="formEyes"
+                                  type="button"
+                                  data-show="顯示密碼"
+                                  data-hide="隱藏密碼"
+                                ></button>
+                              </div>
+                              <div class="help">
+                                <a href="#">忘記密碼</a>
+                              </div>
+                            </div>
                           </div>
-                        </div>
-                        <div class="notice">
-                          帳號請輸入借閱證號或身分證字號<br />
-                          密碼請輸入自訂密碼(預設密碼：生日月日四碼)<br />
-                          若忘了密碼，請至館藏查詢系統修改密碼<br />
-                          若連續登入失敗3次，將鎖定30分鐘無法登入<br />
-                          因應行政院資安政策規範，密碼強制要求修改為長度至少8碼，須含英文及數字之組合。若您使用預設密碼無法登入時，請至館藏查詢系統，變更密碼。
-                        </div>
-                        <div class="formBtnBox">
-                          <button class="btnSecondary" type="submit">
-                            會員登入
-                          </button>
-                          <button class="btnPrimary" type="button">
-                            網路申辦
-                          </button>
+                          <div class="formList inline">
+                            <label class="formListTitle" for="code"
+                              ><em aria-label="必填">*</em>驗證碼</label
+                            >
+                            <div class="formContent inline">
+                              <img
+                                src="images/basic/captcha.gif"
+                                class="captcha"
+                                alt="驗證碼圖片"
+                                tabindex="0"
+                              />
+                              <button class="btnSecondary" type="button">
+                                <i class="i_voice_w"></i>語音播放
+                              </button>
+                              <button class="btnSecondary" type="button">
+                                <i class="i_refresh_w"></i>重新整理
+                              </button>
+                              <input
+                                type="text"
+                                name=""
+                                id="code"
+                                placeholder="請輸入驗證碼"
+                              />
+                            </div>
+                          </div>
+                          <div class="notice">
+                            帳號請輸入借閱證號或身分證字號<br />
+                            密碼請輸入自訂密碼(預設密碼：生日月日四碼)<br />
+                            若忘了密碼，請至館藏查詢系統修改密碼<br />
+                            若連續登入失敗3次，將鎖定30分鐘無法登入<br />
+                            因應行政院資安政策規範，密碼強制要求修改為長度至少8碼，須含英文及數字之組合。若您使用預設密碼無法登入時，請至館藏查詢系統，變更密碼。
+                          </div>
+                          <div class="formBtnBox">
+                            <button class="btnPrimary" type="submit">
+                              會員登入
+                            </button>
+                            <button class="btnPrimary" type="button">
+                              網路申辦
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </form>
                   </div>
+                  <!-- 立即登入 End -->
                 </div>
               </div>
-              <!-- mpSlider End -->
-              <h2 class="sectionTitle">相關連結</h2>
-
+            </div>
+          </section>
+          <!-- 相關連結 Start  -->
+          <section>
+            <div class="container">
               <div class="linkSlider">
                 <!-- 如果需要自動播放，無障礙需要增加此按鈕 -->
                 <button
@@ -336,7 +336,6 @@
                           </div>
                         </a>
                       </div>
-
                       <div class="swiper-slide">
                         <a class="item" href="#">
                           <div class="pic">
@@ -361,21 +360,28 @@
                       <div class="swiper-slide">
                         <a class="item" href="#">
                           <div class="pic">
-                            <img src="images/demo/ad_05.jpg" alt="第5張圖說" />
+                            <img src="images/demo/ad_01.jpg" alt="第1張圖說" />
                           </div>
                         </a>
                       </div>
                       <div class="swiper-slide">
                         <a class="item" href="#">
                           <div class="pic">
-                            <img src="images/demo/ad_06.jpg" alt="第6張圖說" />
+                            <img src="images/demo/ad_02.jpg" alt="第2張圖說" />
                           </div>
                         </a>
                       </div>
                       <div class="swiper-slide">
                         <a class="item" href="#">
                           <div class="pic">
-                            <img src="images/demo/ad_07.jpg" alt="第7張圖說" />
+                            <img src="images/demo/ad_03.jpg" alt="第3張圖說" />
+                          </div>
+                        </a>
+                      </div>
+                      <div class="swiper-slide">
+                        <a class="item" href="#">
+                          <div class="pic">
+                            <img src="images/demo/ad_04.jpg" alt="第4張圖說" />
                           </div>
                         </a>
                       </div>
@@ -389,7 +395,8 @@
               </div>
             </div>
           </section>
-        </div>
+          <!-- 相關連結 End  -->
+        </section>
       </main>
       <!-- main End -->
       <!-- footer Start-->
@@ -421,14 +428,17 @@
             </div>
             <div class="infoBox">
               <div class="footerIcon">
-                <a target="_blank" href="#">
+                <a target="_blank" href="#" title="臺北市政府(另開新視窗)">
+                  <img src="images/taipei.png" alt="臺北市政府" />
+                </a>
+                <a target="_blank" href="#" title="無障礙標章(另開新視窗)">
                   <img
-                    src="images/basic/accessibility.jpg"
+                    src="images/basic/accessibility_aa.png"
                     alt="通過AA檢測等級無障礙網頁檢測"
                   />
                 </a>
-                <a target="_blank" href="#">
-                  <img src="images/basic/egov.png" alt="我的e政府" />
+                <a target="_blank" href="#" title="我的E政府(另開新視窗)">
+                  <img src="images/basic/egov.png" alt="我的E政府" />
                 </a>
               </div>
               <div class="footerInfo2">※本系統建議使用IE以外之瀏覽器瀏覽※</div>
@@ -450,8 +460,6 @@
     <!-- Swiper -->
     <script src="vendor/swiper/swiper-bundle.min.js"></script>
     <!-- js -->
-    <!-- <script src="vendor/jquery-3.7.1.min.js"></script>
-    <script src="js/mainjq.js"></script> -->
     <script src="js/main.js"></script>
     <script src="js/customize.js"></script>
   </body>
