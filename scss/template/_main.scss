@@ -19,7 +19,7 @@
 main {
   width: 100%;
   position: relative;
-  // padding-bottom: 80px;
+
   flex-grow: 1;
   background: url("../images/bottomShape.svg") no-repeat left bottom;
   background-size: 87.5% auto;
@@ -44,8 +44,12 @@ main {
     display: block;
   }
   &.innerPage {
-    padding-top: 40px;
-    background: #f8f8f8;
+    padding-top: 30px;
+    padding-bottom: 60px;
+    background: url("../images/bottomShape.svg") no-repeat left bottom -300px;
+    @include screen("tablet") {
+      background: url("../images/bottomShape.svg") no-repeat left bottom;
+    }
   }
   .mainBox {
     position: relative;
@@ -78,9 +82,32 @@ main {
     gap: 20px;
 
     .pageTitle {
-      font-size: Rem(36);
+      font-size: Rem(28);
       margin: 0;
       font-weight: 600;
+      position: relative;
+      text-align: center;
+      color: #1a1a1a;
+      @include screen("xsMobile") {
+        margin-bottom: 20px;
+      }
+      &::before,
+      &::after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 3px;
+        position: absolute;
+        bottom: -18px;
+      }
+      &::before {
+        background: #808080;
+        right: 50%;
+      }
+      &::after {
+        background: #ffdb01;
+        left: 50%;
+      }
     }
 
     .mainContent {

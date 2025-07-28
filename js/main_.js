@@ -1,4 +1,8 @@
 'use strict';
+// -----------------------------------------------------------------------
+// -----  RWD切換判斷，與_variable.scss 的 --RWDWidth連動  ------------------
+// -----------------------------------------------------------------------
+const setRWDWidth = parseInt(window.getComputedStyle(document.documentElement).getPropertyValue('--RWDWidth'));
 
 // -----------------------------------------------------------------------
 // -----  支援js時，移除no-js  -------------------------------------------------------
@@ -9,7 +13,7 @@ document.documentElement.classList.remove('no-js');
 // -----  共用效果  -------------------------------------------------------
 // -----------------------------------------------------------------------
 
-function _jsSlideUp(element, time = 200) {
+function jsSlideUp(element, time = 200) {
   let ele = window.getComputedStyle(element);
   let display = ele.display;
   let speed = time;
@@ -40,7 +44,7 @@ function _jsSlideUp(element, time = 200) {
 //   jsSlideUp(a);
 // })
 
-function _jsSlideDown(element, time = 200) {
+function jsSlideDown(element, time = 200) {
   let ele = window.getComputedStyle(element);
   let display = ele.display;
   let speed = time;
@@ -70,7 +74,7 @@ function _jsSlideDown(element, time = 200) {
 //   jsSlideDown(a);
 // })
 
-function _jsSlideToggle(element, time = 200) {
+function jsSlideToggle(element, time = 200) {
   let ele = window.getComputedStyle(element);
 
   let display = ele.display;
@@ -117,7 +121,7 @@ function _jsSlideToggle(element, time = 200) {
 //   jsSlideToggle(a);
 // })
 
-function _jsSlideToggleWidth(element, time = 200) {
+function jsSlideToggleWidth(element, time = 200) {
   let ele = window.getComputedStyle(element);
   let display = ele.display;
   let speed = time;
@@ -163,7 +167,7 @@ function _jsSlideToggleWidth(element, time = 200) {
 //   jsSlideToggleWidth(a);
 // })
 
-function _jsFadeIn(element, time = 200) {
+function jsFadeIn(element, time = 200) {
   let ele = window.getComputedStyle(element);
   let display = ele.display;
   let speed = time;
@@ -194,7 +198,7 @@ function _jsFadeIn(element, time = 200) {
 //   jsFadeIn(a);
 // })
 
-function _jsFadeOut(element, time = 200) {
+function jsFadeOut(element, time = 200) {
   let ele = window.getComputedStyle(element);
   let display = ele.display;
   let speed = time;
@@ -220,7 +224,7 @@ function _jsFadeOut(element, time = 200) {
 //   jsFadeOut(a);
 // })
 
-function _jsFadeToggle(element, time = 200) {
+function jsFadeToggle(element, time = 200) {
   let ele = window.getComputedStyle(element);
   let display = ele.display;
   let speed = time;
@@ -263,92 +267,110 @@ function _jsFadeToggle(element, time = 200) {
 //   jsFadeToggle(a);
 // })
 
-function _toggleDropdown(elem, con, autoClose = true) {
+function toggleSlider(elem, con, autoClose = true) {
   const body = document.querySelector('body');
-  const targetSelect = document.querySelector(elem);
-  const targetSelectCon = document.querySelector(con);
-  if (!targetSelect || !targetSelectCon) return;
-  let checkDisplay = window.getComputedStyle(targetSelectCon).display === 'none';
-  const id = `ts_${_randomLetter(3)}${_randomNumber(3)}`;
+  const targetSelect = document.querySelectorAll(elem);
+  let checkDisplay;
+  targetSelect.forEach((item) => {
+    let id = `ts_${randomLetter(3)}${randomFloor(0, 999)}`;
+    let targetSelectCon = document.querySelector(con);
+    checkDisplay = window.getComputedStyle(targetSelectCon).display === 'none';
 
-  if (checkDisplay) {
-    targetSelect.setAttribute('aria-expanded', 'false');
-  } else {
-    targetSelect.setAttribute('aria-expanded', 'true');
-    targetSelect.classList.add('active');
-  }
-  targetSelect.setAttribute('aria-haspopup', 'true');
-  targetSelect.setAttribute('aria-controls', `${id}_con`);
-  targetSelect.setAttribute('id', id);
-  targetSelectCon.setAttribute('id', `${id}_con`);
-  targetSelectCon.setAttribute('aria-labelledby', id);
+    if (checkDisplay) {
+      item.setAttribute('aria-expanded', 'false');
+    } else {
+      item.setAttribute('aria-expanded', 'true');
+      item.classList.add('active');
+    }
+    item.setAttribute('aria-pressed', 'false');
+    item.setAttribute('aria-haspopup', 'true');
+    item.setAttribute('aria-controls', `${id}_con`);
+    item.setAttribute('id', id);
+    targetSelectCon.setAttribute('id', `${id}_con`);
+    targetSelectCon.setAttribute('aria-labelledby', id);
 
-  targetSelect.addEventListener('click', (e) => {
-    let expanded = targetSelect.getAttribute('aria-expanded');
-    expanded === 'true' ? closeCon() : openCon();
+    item.addEventListener('click', (e) => {
+      let expanded = item.getAttribute('aria-expanded');
+      if (expanded === 'true') {
+        item.setAttribute('aria-expanded', 'false');
+        item.setAttribute('aria-pressed', 'false');
+        item.classList.remove('active');
+      } else {
+        item.setAttribute('aria-expanded', 'true');
+        item.setAttribute('aria-pressed', 'true');
+        item.classList.add('active');
+      }
+      jsSlideToggle(targetSelectCon);
+    });
   });
-  function openCon() {
-    targetSelect.setAttribute('aria-expanded', 'true');
-    targetSelect.classList.add('active');
-    _jsSlideDown(targetSelectCon);
-  }
-  function closeCon() {
-    targetSelect.setAttribute('aria-expanded', 'false');
-    targetSelect.classList.remove('active');
-    _jsSlideUp(targetSelectCon);
-    targetSelect.focus();
-  }
-  body.addEventListener('keydown', (e) => {
-    let allTarget = targetSelectCon.querySelectorAll('a, button, input, textarea, select');
-    const firstTarget = allTarget[0];
-    const lastTarget = [...allTarget].at(-1);
 
-    if (targetSelect.getAttribute('aria-expanded') === 'true') {
-      if (e.code === 'Tab') {
-        if (e.target === targetSelect && e.shiftKey) {
-          closeCon();
-        } else if (e.target === firstTarget && e.shiftKey) {
-          e.preventDefault();
-          targetSelect.focus();
-        } else if (e.target === lastTarget && !e.shiftKey) {
-          e.preventDefault();
-          closeCon();
+  body.addEventListener('keydown', (e) => {
+    targetSelect.forEach((item) => {
+      const targetCon = item.parentNode.querySelector(con);
+      const isInsideTarget = jsParents(e.target, targetCon).length === 0;
+
+      let allTarget = targetCon.querySelectorAll('a, button, input, textarea, select');
+
+      if (item.getAttribute('aria-expanded') === 'true' || !isInsideTarget) {
+        if (e.code === 'Tab') {
+          const firstTarget = allTarget[0];
+          const lastTarget = allTarget[allTarget.length - 1];
+          const shift = e.shiftKey;
+
+          if (e.target === item) {
+            e.preventDefault();
+            // 當焦點在 item 上，依據 shift 條件決定移到第一或最後一個目標
+            (shift ? lastTarget : firstTarget).focus();
+          } else if ((shift && e.target === firstTarget) || (!shift && e.target === lastTarget)) {
+            e.preventDefault();
+            // 當焦點在 allTarget 的首或尾時，則循環回到 item
+            item.focus();
+          }
+        }
+        //Escape
+        else if (e.code === 'Escape' && !isInsideTarget) {
+          item.setAttribute('aria-expanded', 'false');
+          item.setAttribute('aria-pressed', 'false');
+          jsSlideUp(targetCon);
+          item.focus();
         }
       }
-      //Escape
-      else if (e.code === 'Escape') {
-        targetSelect.setAttribute('aria-expanded', 'false');
-        _jsSlideUp(targetSelectCon);
-        targetSelect.focus();
-      }
-    }
+    });
   });
 
   if (autoClose) {
     // 點擊其他地方關閉;
     body.addEventListener('click', (e) => {
-      let isInsideTarget = _jsParents(e.target, targetSelectCon).length === 0;
+      const targetSelectCon = document.querySelector(con);
+      let isInsideTarget = jsParents(e.target, targetSelectCon).length === 0;
 
-      if (targetSelect.getAttribute('aria-expanded') === 'true' && e.target !== targetSelect && isInsideTarget) {
-        targetSelect.setAttribute('aria-expanded', 'false');
-        targetSelect.classList.remove('active');
-        _jsSlideUp(targetSelectCon);
-      }
+      targetSelect.forEach((item) => {
+        if (item.getAttribute('aria-expanded') === 'true' && e.target !== item && isInsideTarget) {
+          item.setAttribute('aria-expanded', 'false');
+          item.setAttribute('aria-pressed', 'false');
+          item.classList.remove('active');
+          jsSlideUp(targetSelectCon);
+        }
+      });
     });
   }
 
   window.addEventListener('resize', (e) => {
     if (!checkDisplay) return;
-    targetSelect.setAttribute('aria-expanded', 'false');
-    targetSelect.classList.remove('active');
-    _jsSlideUp(targetSelectCon);
+    targetSelect.forEach((item, i) => {
+      const targetCon = document.querySelector(con);
+      item.setAttribute('aria-expanded', 'false');
+      item.setAttribute('aria-pressed', 'false');
+      item.classList.remove('active');
+      jsSlideUp(targetCon);
+    });
   });
 }
 
 // 使用方式
 // toggleSlider('.target','.con');
 
-function _jsParents(element, elementCheck) {
+function jsParents(element, elementCheck) {
   const matched = [];
 
   const elements = typeof element === 'string' ? document.querySelectorAll(element) : element;
@@ -400,7 +422,7 @@ function _jsParents(element, elementCheck) {
 // 操作父層
 // jsParents('.target/#target').forEach((i) => {});
 
-function _jsChildren(element, elementCheck) {
+function jsChildren(element, elementCheck) {
   const elementArr = typeof element === 'string' ? document.querySelectorAll(element) : element;
 
   const _getChildren = (item) => {
@@ -433,7 +455,7 @@ function _jsChildren(element, elementCheck) {
 // jsChildren('.target/#target').forEach((i) => {});
 
 // 檢查元素是否可見
-function _isElementVisible(el) {
+function isElementVisible(el) {
   let current = el;
   while (current) {
     const style = window.getComputedStyle(current);
@@ -446,17 +468,12 @@ function _isElementVisible(el) {
 }
 
 // 亂數數字
-function _randomNumber(max) {
-  let letter = '1234567890';
-  let number = '';
-
-  for (let i = 0; i < max; i++) number += letter.charAt(Math.floor(Math.random() * letter.length));
-  return number;
+function randomFloor(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 // 亂數英文字
-function _randomLetter(max) {
-  let letter = 'abcdefghijklmnopqrstuvwxyz';
+function randomLetter(max, letter = 'abcdefghijklmnopqrstuvwxyz') {
   let text = '';
 
   for (let i = 0; i < max; i++) text += letter.charAt(Math.floor(Math.random() * letter.length));
@@ -465,7 +482,7 @@ function _randomLetter(max) {
 
 // 改變標籤
 // 改變標籤
-function _changeTag(oldTag, newTag) {
+function changeTag(oldTag, newTag) {
   // 檢查 oldTag 是否存在於 DOM 中
   if (!oldTag || !oldTag.parentNode) return;
 
@@ -484,11 +501,17 @@ function _changeTag(oldTag, newTag) {
   oldTag.replaceWith(newTagElem);
 }
 
+// 增加透明黑底
+const wrapper = document.querySelector('.wrapper');
+const overlay = document.createElement('div');
+overlay.classList.add('overlay');
+wrapper?.insertAdjacentElement('afterbegin', overlay);
+
 // -----------------------------------------------------------------------
 // -----  FontSize   -----------------------------------------------------
 // -----------------------------------------------------------------------
 
-function FontSize() {
+function fontSize() {
   const body = document.querySelector('body');
   // 更新按鈕狀態與目標區域的字體 class
   function _updateView(buttons, target, activeClassName) {
@@ -565,22 +588,12 @@ function FontSize() {
   const mainContent = document.querySelector('.mainContentBox .mainContent');
   if (fontSizeInner && mainContent) _setupFontSizeToggle(fontSizeInner, 'FontSizeInner', mainContent);
 }
-window.addEventListener('load', () => FontSize());
+window.addEventListener('load', () => fontSize());
 
 // -----------------------------------------------------------------------
 // -----  menu   ------------------------------------------------------
 // -----------------------------------------------------------------------
 function mainMenu(obj) {
-  // RWD切換判斷，與_variable.scss 的 --RWDWidth連動
-  const setRWDWidth = parseInt(window.getComputedStyle(document.documentElement).getPropertyValue('--RWDWidth'));
-  // 增加透明黑底
-  let overlay = document.querySelector('.overlay');
-  if (!overlay) {
-    overlay = document.createElement('div');
-    overlay.classList.add('overlay');
-    document.body.insertAdjacentElement('afterbegin', overlay);
-  }
-
   const body = document.querySelector('body');
   const header = document.querySelector('header');
   const headTop = document.querySelector('.headTop');
@@ -598,13 +611,12 @@ function mainMenu(obj) {
   const hasChild = menu.querySelectorAll('.hasChild');
 
   // 檢查子選單是否超出視窗邊界
-  function _checkBorder(e) {
+  function checkBorder(e) {
     if (mega) return;
     // 抓出該項目以下有多少層級
     const nextUl = e.querySelectorAll('ul');
     //確定最後一層ul的父層li共有幾個
-    const hasChildLi = _jsParents([...nextUl].at(-1), 'li');
-    console.log(nextUl);
+    const hasChildLi = jsParents(nextUl[nextUl.length - 1], 'li');
 
     // 如果只有一層就不需要
     if (hasChildLi.length <= 1) return;
@@ -627,7 +639,7 @@ function mainMenu(obj) {
   function _handleMouseenter(e) {
     e.target.classList.add('active');
     e.target.querySelector('a').setAttribute('aria-expanded', 'true');
-    _checkBorder(e.target);
+    checkBorder(e.target);
   }
 
   // 滑鼠滑出
@@ -638,7 +650,7 @@ function mainMenu(obj) {
   }
 
   // 選單層級展開fn
-  function _toggleAccordion(item, con) {
+  function toggleAccordion(item, con) {
     const nodeNameCheck = item.nodeName.toLowerCase();
 
     let content = item.parentNode.querySelector(con);
@@ -649,14 +661,14 @@ function mainMenu(obj) {
       item.setAttribute('aria-expanded', 'true');
       item.classList.add('active');
     }
-    _jsSlideToggle(content);
+    jsSlideToggle(content);
 
     const siblings = [...item.parentNode.parentNode.children].filter((child) => child !== item.parentNode);
 
     siblings.forEach((j) => {
       if (j.querySelector(con)) {
         let target = j.querySelector(con);
-        _jsSlideUp(target);
+        jsSlideUp(target);
         j.querySelector(nodeNameCheck).setAttribute('aria-expanded', 'false');
       }
     });
@@ -694,78 +706,32 @@ function mainMenu(obj) {
       });
     }
 
-    // 使用事件委派處理滑鼠移入和移出事件
-    menu.addEventListener(
-      'mouseenter',
-      (e) => {
-        if (e.target.matches('.hasChild')) {
-          _handleMouseenter(e);
-        }
-      },
-      true
-    );
-
-    menu.addEventListener(
-      'mouseleave',
-      (e) => {
-        if (e.target.matches('.hasChild')) {
-          _handleMouseleave(e);
-        }
-      },
-      true
-    );
-
     //無障礙操作
+    const menuAllLi = menu.querySelectorAll('li');
+    const menuAllA = menu.querySelectorAll('a');
+    const lastA = menu.querySelectorAll('a')[menuAllLi.length - 1];
+    const firstA = menu.querySelectorAll('a')[0];
 
     menu.addEventListener('keydown', (e) => {
-      const checkHasSubmenu = e.target.parentNode.classList.contains('hasChild');
-      const lastTarget = [...e.target.closest('ul').querySelectorAll('a,button,input,textarea,select')].at(-1);
-      console.log(_jsParents(e.target, 'li'));
+      let checkTarget = [...menuAllA].map((i) => e.target === i);
+      if (!checkTarget || window.outerWidth <= setRWDWidth) return;
+      e.target.setAttribute('aria-expanded', 'true');
 
-      _checkBorder(e.target.parentNode);
-      if (window.outerWidth <= setRWDWidth) return;
-
+      checkBorder(e.target.parentNode);
       if (e.code === 'Tab' && !e.shiftKey) {
+        e.target.parentNode.classList.add('active');
         const siblings = [...e.target.parentNode.parentNode.children].filter((child) => child !== e.target.parentNode);
-        if (checkHasSubmenu) {
-          e.target.parentNode.classList.add('active');
-          e.target.setAttribute('aria-expanded', 'true');
+        siblings.forEach((j) => j.classList.remove('active'));
+        if (e.target === lastA) {
+          menuAllLi.forEach((j) => j.classList.remove('active'));
         }
-        siblings.forEach((j) => {
-          j.classList.remove('active');
-          j.classList.contains('hasChild') ? j.querySelector('a').setAttribute('aria-expanded', 'false') : null;
-        });
-        if (e.target === lastTarget) {
-          _jsParents(e.target, 'li').forEach((j) => j.classList.remove('active'));
-        }
-      } else if (e.code === 'Tab' && e.shiftKey) {
-        if (checkHasSubmenu) {
-          e.target.parentNode.classList.remove('active');
-          e.target.setAttribute('aria-expanded', 'false');
-        }
+      } else if (e.code === 'Tab' && e.shiftKey && e.target === firstA) {
+        menuAllLi.forEach((j) => j.classList.remove('active'));
       }
     });
 
-    // menu.addEventListener('keydown', (e) => {
-    //   let checkTarget = [...menuAllA].map((i) => e.target === i);
-    //   if (!checkTarget || window.outerWidth <= setRWDWidth) return;
-    //   e.target.setAttribute('aria-expanded', 'true');
-
-    //   _checkBorder(e.target.parentNode);
-    //   if (e.code === 'Tab' && !e.shiftKey) {
-    //     e.target.parentNode.classList.add('active');
-    //     const siblings = [...e.target.parentNode.parentNode.children].filter((child) => child !== e.target.parentNode);
-    //     siblings.forEach((j) => j.classList.remove('active'));
-    //     if (e.target === lastA) {
-    //       menuAllLi.forEach((j) => j.classList.remove('active'));
-    //     }
-    //   } else if (e.code === 'Tab' && e.shiftKey && e.target === firstA) {
-    //     menuAllLi.forEach((j) => j.classList.remove('active'));
-    //   }
-    // });
-
     hasChild.forEach((i) => {
-      const id = `menu_${_randomLetter(3)}${_randomNumber(3)}`;
+      const id = `menu_${randomLetter(3)}${randomFloor(0, 999)}`;
       const childA = i.querySelector('a');
       const childUl = i.querySelector('ul');
       childA.setAttribute('aria-expanded', 'false');
@@ -774,6 +740,10 @@ function mainMenu(obj) {
       childA.setAttribute('aria-controls', `${id}_con`);
       childUl.setAttribute('id', `${id}_con`);
       childUl.setAttribute('aria-labelledby', id);
+
+      // 滑鼠滑過
+      i.addEventListener('mouseenter', _handleMouseenter);
+      i.addEventListener('mouseleave', _handleMouseleave);
     });
   }
 
@@ -805,7 +775,7 @@ function mainMenu(obj) {
       topNavClone.querySelector('#aU')?.remove();
       // 將 top選單 加入到 手機版主選單
       mobileMainMenuBox.insertAdjacentElement('beforeend', topNavClone);
-      _changeTag(topNavClone, 'div');
+      changeTag(topNavClone, 'div');
     }
 
     // 將 關閉按鈕 加入到 手機版主選單
@@ -815,7 +785,7 @@ function mainMenu(obj) {
     // 將 手機版主選單 加入到 header 前
     header?.insertAdjacentElement('beforebegin', mobileMenu);
     // 轉換標籤
-    _changeTag(mainMenuClone, 'div');
+    changeTag(mainMenuClone, 'div');
 
     // 點擊選單按鈕 執行 展開側邊選單函式
     const mobileMainMenuBtn = document.querySelector('#mobileMainMenuBtn');
@@ -832,22 +802,20 @@ function mainMenu(obj) {
       mobileMainMenuBtn.setAttribute('aria-pressed', 'true');
 
       setTimeout(() => {
-        mobileMenu.style.transform = 'translateX(0px)';
+        mobileMenu.style.transform = `translateX(0px)`;
         mobileMenu.classList.add('open');
       }, 0);
       mobileMainMenuBtn.classList.add('active');
       if (window.outerWidth < setRWDWidth) body.classList.add('noscroll');
-      _jsFadeIn(overlay);
+      jsFadeIn(overlay);
       overlay.style.zIndex = '90';
     }
-
     // 隱藏側邊選單函式
     function _hideSidebar(overlayFN = true) {
-      mobileMenu.style.transform = 'translateX(-100%)';
+      mobileMenu.style.transform = `translateX(-100%)`;
       mobileMainMenuBtn.setAttribute('aria-expanded', 'false');
       mobileMainMenuBtn.setAttribute('aria-pressed', 'false');
 
-      // 等待 300ms 的動畫時間
       setTimeout(() => {
         mobileMenu.removeAttribute('style');
       }, 300);
@@ -856,7 +824,7 @@ function mainMenu(obj) {
       body.classList.remove('noscroll');
       mobileMainMenuBtn.classList.remove('active');
       overlay.style.zIndex = '';
-      if (overlayFN) _jsFadeOut(overlay);
+      if (overlayFN) jsFadeOut(overlay);
     }
 
     mobileMainMenuBtn.addEventListener('click', (e) => {
@@ -871,32 +839,12 @@ function mainMenu(obj) {
 
     overlay.addEventListener('click', () => _hideSidebar());
 
-    // 使用事件委派處理手機選單的點擊事件
-    mobileMenu.addEventListener('click', (e) => {
-      const target = e.target;
-      const hasChildLi = target.closest('.hasChild');
-
-      if (hasChildLi) {
-        let childControl;
-        if (!needLink) {
-          childControl = hasChildLi.querySelector('a');
-          if (target === childControl) {
-            e.preventDefault();
-            _toggleAccordion(childControl, 'ul');
-          }
-        } else {
-          childControl = hasChildLi.querySelector('.nextLvl');
-          if (target === childControl) {
-            _toggleAccordion(childControl, 'ul');
-          }
-        }
-      }
-    });
-
-    // 初始設定
+    // 手機版選單展開功能
     const mobileMenuLiHasChild = mobileMenu.querySelectorAll('li.hasChild');
+
     mobileMenuLiHasChild.forEach((i) => {
       let childControl;
+
       if (!needLink) {
         childControl = i.querySelector('a');
         childControl.setAttribute('role', 'button');
@@ -911,7 +859,7 @@ function mainMenu(obj) {
       }
 
       // 無障礙設定 -- mobile
-      const id = `mobileMenu_${_randomLetter(3)}${_randomNumber(3)}`;
+      const id = `mobileMenu_${randomLetter(3)}${randomFloor(0, 999)}`;
       const childUl = i.querySelector('ul');
       childControl.setAttribute('aria-expanded', 'false');
       childControl.setAttribute('aria-haspopup', 'true');
@@ -919,6 +867,14 @@ function mainMenu(obj) {
       childControl.setAttribute('aria-controls', `${id}_con`);
       childUl.setAttribute('id', `${id}_con`);
       childUl.setAttribute('aria-labelledby', id);
+
+      childControl.addEventListener('click', (e) => {
+        if (!childControl.parentNode.classList.contains('hasChild')) return;
+        if (!needLink) {
+          e.preventDefault();
+        }
+        toggleAccordion(childControl, 'ul');
+      });
     });
 
     // 手機版鍵盤無障礙設定
@@ -954,16 +910,6 @@ function mainMenu(obj) {
 // -----  search   ------------------------------------------------------
 // -----------------------------------------------------------------------
 function webSearch() {
-  // RWD切換判斷，與_variable.scss 的 --RWDWidth連動
-  const setRWDWidth = parseInt(window.getComputedStyle(document.documentElement).getPropertyValue('--RWDWidth'));
-  // 增加透明黑底
-  let overlay = document.querySelector('.overlay');
-  if (!overlay) {
-    overlay = document.createElement('div');
-    overlay.classList.add('overlay');
-    document.body.insertAdjacentElement('afterbegin', overlay);
-  }
-
   const body = document.querySelector('body');
   const webSearch = document.querySelector('.webSearch');
 
@@ -975,7 +921,7 @@ function webSearch() {
   const webSearchBtn = document.querySelector('#topSearchBtn');
   const searchTargetSelect = document.querySelectorAll('#topSearchBtn, #mobileSearchBtn');
   const webSearchAllTarget = webSearch.querySelectorAll('a, button, input, select, textarea');
-  const id = `ws_${_randomLetter(3)}${_randomNumber(3)}`;
+  const id = `ws_${randomLetter(3)}${randomFloor(0, 999)}`;
 
   if (webSearchBtn) {
     // 桌機搜尋按鈕進行設定與事件綁定
@@ -983,7 +929,7 @@ function webSearch() {
     webSearchBtn.setAttribute('aria-expanded', 'false');
     webSearchBtn.setAttribute('aria-pressed', 'false');
     webSearchBtn.setAttribute('aria-haspopup', 'true');
-    webSearchBtn.addEventListener('click', () => _toggleContent(webSearchBtn));
+    webSearchBtn.addEventListener('click', () => toggleContent(webSearchBtn));
   }
 
   // 行動版搜尋按鈕設定及事件綁定
@@ -992,7 +938,7 @@ function webSearch() {
     mobileSearchBtn.setAttribute('aria-expanded', 'false');
     mobileSearchBtn.setAttribute('aria-pressed', 'false');
     mobileSearchBtn.setAttribute('aria-haspopup', 'true');
-    mobileSearchBtn.addEventListener('click', () => _toggleContent(mobileSearchBtn));
+    mobileSearchBtn.addEventListener('click', () => toggleContent(mobileSearchBtn));
   }
 
   // 搜尋內容區塊設定 ARIA 標記，建立與觸發按鈕的關聯
@@ -1000,15 +946,14 @@ function webSearch() {
   webSearch.setAttribute('aria-labelledby', `topSearchBtn mobileSearchBtn`);
 
   //  切換搜尋展開/關閉的函式
-  function _toggleContent(elem) {
-    const checkDisplay = window.getComputedStyle(webSearch).display === 'none';
-
-    if (checkDisplay) {
-      _showSearchBox(elem);
-      if (window.outerWidth < setRWDWidth) body.classList.add('noscroll');
-    } else {
+  function toggleContent(elem, close = true) {
+    const isExpanded = elem?.getAttribute('aria-expanded') === 'true';
+    if (isExpanded && close) {
       _hideSearchBox(elem);
       body.classList.remove('noscroll');
+    } else {
+      _showSearchBox(elem);
+      if (window.outerWidth < setRWDWidth) body.classList.add('noscroll');
     }
   }
 
@@ -1021,18 +966,18 @@ function webSearch() {
       if (webSearchAllTarget[0]) webSearchAllTarget[0].value = '';
       if (webSearchAllTarget[0]) webSearchAllTarget[0].focus();
     });
-    _jsSlideDown(webSearch);
-    window.outerWidth < setRWDWidth ? _jsFadeIn(overlay) : null;
+    jsSlideDown(webSearch);
+    window.outerWidth < setRWDWidth ? jsFadeIn(overlay) : null;
   }
 
   function _hideSearchBox(elem, overLayFn = true) {
     elem.setAttribute('aria-expanded', 'false');
     elem.setAttribute('aria-pressed', 'false');
     elem.classList.remove('active');
-    _jsSlideUp(webSearch);
+    jsSlideUp(webSearch);
 
     if (overLayFn) {
-      _jsFadeOut(overlay);
+      jsFadeOut(overlay);
       setTimeout(() => {
         elem.focus();
       });
@@ -1043,45 +988,57 @@ function webSearch() {
   body.addEventListener('keydown', (e) => {
     const isSearchBtn = e.target === webSearchBtn || e.target === mobileSearchBtn;
     const searchBtn = window.outerWidth >= setRWDWidth ? webSearchBtn : mobileSearchBtn;
-    const lastTarget = [...webSearchAllTarget].at(-1);
+    const checkExpanded = e.target.getAttribute('aria-expanded');
+    const lastTarget = webSearchAllTarget[webSearchAllTarget.length - 1];
 
     // Tab
     if (e.code === 'Tab') {
-      if (e.target === lastTarget) {
-        _toggleContent(searchBtn);
+      if (e.target === lastTarget && !e.shiftKey && searchBtn) {
+        e.preventDefault();
+        searchBtn.focus();
+      } else if (isSearchBtn && checkExpanded === 'true') {
+        e.preventDefault();
+        if (!e.shiftKey) {
+          if (webSearchAllTarget[0]) webSearchAllTarget[0].focus();
+        } else {
+          lastTarget.focus();
+        }
       }
-      if (e.shiftKey && isSearchBtn) {
-        const checkDisplay = window.getComputedStyle(webSearch).display === 'none';
-        !checkDisplay ? _hideSearchBox(searchBtn, true) : null;
-      }
+
+      // Enter
+    } else if (e.code === 'Enter' && isSearchBtn) {
+      setTimeout(() => {
+        if (webSearchAllTarget[0]) webSearchAllTarget[0].focus();
+      });
+
       // Alt+S
     } else if (e.altKey && e.code === 'KeyS') {
-      _toggleContent(searchBtn);
+      toggleContent(searchBtn, false);
 
       // Escape
     } else if (e.code === 'Escape') {
       const checkDisplay = window.getComputedStyle(webSearch).display;
       if (checkDisplay === 'none') return;
       if (window.outerWidth >= setRWDWidth && webSearchBtn) {
-        _toggleContent(webSearchBtn);
+        toggleContent(webSearchBtn);
       } else if (window.outerWidth < setRWDWidth && mobileSearchBtn) {
-        _toggleContent(mobileSearchBtn);
+        toggleContent(mobileSearchBtn);
       }
-      _jsFadeOut(overlay);
+      jsFadeOut(overlay);
     }
   });
 
   // 點擊其他地方時關閉搜尋面板
   body.addEventListener('click', (e) => {
-    const isInsideSearch = _jsParents(e.target, webSearch).length === 0;
+    const isInsideSearch = jsParents(e.target, webSearch).length === 0;
 
     searchTargetSelect.forEach((item) => {
       if (item.getAttribute('aria-expanded') === 'true' && e.target !== item && isInsideSearch && webSearchBtn !== null) {
         item.setAttribute('aria-expanded', 'false');
         item.setAttribute('aria-pressed', 'false');
         item.classList.remove('active');
-        _jsSlideUp(webSearch);
-        _jsFadeOut(overlay);
+        jsSlideUp(webSearch);
+        jsFadeOut(overlay);
       }
     });
   });
@@ -1092,211 +1049,27 @@ function webSearch() {
 window.addEventListener('load', () => webSearch());
 
 // -----------------------------------------------------------------------
-// -----  sideNav   ------------------------------------------------------
-// -----------------------------------------------------------------------
-function sideNav(options) {
-  // RWD切換判斷，與_variable.scss 的 --RWDWidth連動
-  const setRWDWidth = parseInt(window.getComputedStyle(document.documentElement).getPropertyValue('--RWDWidth'));
-  const body = document.querySelector('body');
-  const { showDefault = true, needLink = false, duration = 200, float = true } = options;
-  const sideNav = document.querySelector('.sideNav');
-  if (!sideNav) return;
-
-  float ? sideNav.classList.add('typeA') : sideNav.classList.add('typeB');
-
-  const nextOpen = sideNav.dataset.nextOpen;
-  const nextClose = sideNav.dataset.nextClose;
-
-  const sideMenu = sideNav.querySelector('nav#sideMenu');
-  if (!sideMenu) return;
-  const sideMenuContent = sideMenu.querySelector('.sideMenuContent');
-  sideMenu.dataset.width = parseInt(getComputedStyle(sideMenuContent).width.replace('px', ''));
-  const sideNavBtn = sideNav.querySelector('#sideNavBtn');
-  const allTarget = sideNav.querySelectorAll('a, button, input, select');
-
-  // 設定無障礙屬性
-  // 按鈕
-  sideNavBtn.setAttribute('aria-haspopup', 'true');
-  sideNavBtn.setAttribute('aria-controls', 'sideMenu');
-  // 選單
-  sideMenu.setAttribute('aria-labelledby', 'sideNavBtn');
-  sideMenu.setAttribute('role', 'navigation');
-
-  if (sideNavBtn) {
-    // 統一設定過渡效果
-
-    function _setTransitionBtn(left = null, toLeft = null) {
-      const checkDisplay = window.getComputedStyle(sideMenu).display === 'none';
-
-      sideNavBtn.setAttribute('aria-expanded', checkDisplay ? 'false' : 'true');
-      sideNavBtn.classList.toggle('active');
-
-      if (window.outerWidth <= setRWDWidth && float) {
-        sideNavBtn.style.transitionProperty = 'left';
-        sideNavBtn.style.transitionDuration = `${duration}ms`;
-        sideNavBtn.style.left = `${left}px`;
-        setTimeout(() => {
-          sideNavBtn.style.left = `${toLeft}px`;
-        });
-        setTimeout(() => {
-          sideNavBtn.style.removeProperty('transition-duration');
-          sideNavBtn.style.removeProperty('transition-property');
-        }, duration);
-      }
-    }
-
-    function _transitionToggle() {
-      if ((window.outerWidth <= setRWDWidth && float) || window.outerWidth > setRWDWidth) {
-        _jsSlideToggleWidth(sideMenu, 200);
-      } else if (window.outerWidth <= setRWDWidth && !float) {
-        _jsSlideToggle(sideMenu);
-      }
-    }
-    sideNavBtn.addEventListener('click', () => {
-      _transitionToggle();
-      _setTransitionBtn();
-    });
-  }
-
-  // 預設開啟/關閉
-  if (showDefault) {
-    // 按鈕
-    sideNavBtn.setAttribute('aria-expanded', 'true');
-    sideNavBtn.classList.add('active');
-    // 選單
-    sideMenu.style.display = 'block';
-  } else {
-    // 按鈕
-    sideNavBtn.setAttribute('aria-expanded', 'false');
-    sideNavBtn.setAttribute('aria-controls', 'sideMenu');
-    // 選單
-    sideMenu.style.display = 'none';
-  }
-
-  // 為含下層選單的 li 加上 hasChild 類別
-  sideMenu.querySelectorAll('li ul').forEach((item) => item.parentNode.classList.add('hasChild'));
-
-  // 設定所有含子選單項目的無障礙與點擊處理
-  sideMenu.querySelectorAll('.hasChild').forEach((item) => {
-    const uid = `sn_${_randomLetter(3)}${_randomNumber(3)}`;
-    let childControl;
-    if (!needLink) {
-      childControl = item.querySelector('a');
-      childControl.setAttribute('role', 'button');
-    } else {
-      item.classList.add('needLink');
-      const nextBtn = document.createElement('button');
-      nextBtn.classList.add('nextLvl');
-      item.querySelector('a').insertAdjacentElement('afterend', nextBtn);
-      nextBtn.setAttribute('type', 'button');
-      nextBtn.setAttribute('aria-label', nextOpen);
-      childControl = nextBtn;
-    }
-    const childUl = item.querySelector('ul');
-    childControl.setAttribute('aria-expanded', 'false');
-    childControl.setAttribute('aria-haspopup', 'true');
-    childControl.setAttribute('id', uid);
-    childControl.setAttribute('aria-controls', `${uid}_con`);
-    childUl.setAttribute('id', `${uid}_con`);
-    childUl.setAttribute('aria-labelledby', uid);
-    childControl.addEventListener('click', (e) => {
-      e.preventDefault();
-      _toggleAccordion(childControl, 'ul', item);
-    });
-  });
-
-  // 手風琴切換函式
-  function _toggleAccordion(control, selector, parent) {
-    const content = control.parentNode.querySelector(selector);
-    const isVisible = getComputedStyle(content).display !== 'none';
-    control.setAttribute('aria-expanded', isVisible ? 'false' : 'true');
-    parent.classList.toggle('active');
-    _jsSlideToggle(content);
-    if (needLink) {
-      control.setAttribute('aria-label', isVisible ? nextOpen : nextClose);
-    }
-    // 收合同層其他項目
-    const sibling = [...control.parentNode.parentNode.children].filter((item) => item !== parent);
-
-    sibling.forEach((item) => {
-      item.querySelector(selector) !== null ? _jsSlideUp(item.querySelector(selector)) : null;
-      if (needLink) {
-        item.querySelector('button')?.setAttribute('aria-expanded', 'false');
-        item.querySelector('button')?.setAttribute('aria-label', nextOpen);
-      } else {
-        item.querySelector('a').setAttribute('aria-expanded', 'false');
-      }
-      item.classList.remove('active');
-    });
-  }
-
-  let checkRwd = window.outerWidth < setRWDWidth;
-  // 鍵盤無障礙設定（僅限 RWD 狀態下有效）
-  body.addEventListener('keydown', (e) => {
-    if (checkRwd && sideNavBtn.getAttribute('aria-expanded') === 'true') {
-      const focusable = [...allTarget].filter((item) => item.getBoundingClientRect().height !== 0);
-      const lastFocusable = focusable.at(-1);
-      if (e.code === 'Tab') {
-        if (e.shiftKey && e.target === allTarget[0]) {
-          e.preventDefault();
-          lastFocusable.focus();
-        } else if (!e.shiftKey && e.target === lastFocusable) {
-          e.preventDefault();
-          sideNavBtn.focus();
-        }
-      }
-    }
-  });
-
-  // 視窗載入與重置事件：調整響應式設定
-  const _checkRwdFn = () => {
-    if (window.outerWidth <= setRWDWidth) {
-      checkRwd = true;
-      sideNavBtn.classList.remove('active');
-      sideNavBtn.setAttribute('aria-expanded', 'false');
-      if (float) {
-        sideNavBtn.style.left = '';
-        sideNavBtn.style.top = `80px`;
-        sideMenu.removeAttribute('style');
-      } else {
-        _jsSlideUp(sideMenu);
-      }
-    } else if (window.outerWidth > setRWDWidth && checkRwd === true) {
-      checkRwd = false;
-      sideNavBtn.classList.add('active');
-      sideNavBtn.setAttribute('aria-expanded', 'true');
-      sideMenu.removeAttribute('style');
-      if (!float) _jsSlideDown(sideMenu);
-    }
-  };
-  _checkRwdFn();
-  window.addEventListener('resize', () => _checkRwdFn());
-}
-
-// -----------------------------------------------------------------------
 // -----  Tab   ------------------------------------------------------
 // -----------------------------------------------------------------------
 
 function tabFunction(obj) {
-  // RWD切換判斷，與_variable.scss 的 --RWDWidth連動
-  const setRWDWidth = parseInt(window.getComputedStyle(document.documentElement).getPropertyValue('--RWDWidth'));
-  const { target, autoClose = true, openContent = false, modeSwitch = false, windowWidth = setRWDWidth, openSwitch = true } = obj;
+  const { target, autoClose = true, openContent = false, modeSwitch = false, windowWidth = setRWDWidth, openIndex = 0, openSwitch = true } = obj;
 
   const tabSet = document.querySelector(target);
   if (!tabSet) return;
 
+  const tabBtnBox = tabSet.querySelector('.tabBtnBox');
   const tabItems = tabSet.querySelector('.tabItems');
   const tabBtn = tabSet.querySelectorAll('.tabBtn');
   const tabContent = tabSet.querySelectorAll('.tabContent');
   const tabContentIn = tabSet.querySelectorAll('.tabContentIn');
-  const defaultIndex = [...tabBtn].indexOf(tabItems.querySelector('.active')) === -1 ? 0 : [...tabBtn].indexOf(tabItems.querySelector('.active'));
 
   //初始設定
-  function _tabInit(targetIndex) {
+  function tabInit(targetIndex) {
     tabItems.setAttribute('role', 'tablist');
 
     tabBtn.forEach((tab, i) => {
-      const id = `tab_${_randomLetter(3)}${_randomNumber(3)}`;
+      const id = `tab_${randomLetter(3)}${randomFloor(0, 999)}`;
       const controls = `${id}_con`;
 
       tab.setAttribute('role', 'tab');
@@ -1308,22 +1081,22 @@ function tabFunction(obj) {
       if (tabContent[i] === undefined) {
         console.error(`tab功能: ${obj.target}內容數量與按鈕數量不符`);
       } else {
-        _setAttributeFn(tabContent[i], 'tabpanel', controls, id);
+        setAttributeFn(tabContent[i], 'tabpanel', controls, id);
       }
 
       //模式切換-新增按鈕
       if (modeSwitch) {
-        const mobileTabBtn = _createMobileTabBtn(id, controls, tab.textContent);
+        const mobileTabBtn = createMobileTabBtn(id, controls, tab.textContent);
         tabContent[i].insertAdjacentElement('afterbegin', mobileTabBtn);
       }
     });
 
-    _checkTarget(targetIndex);
+    checkTarget(targetIndex);
     tabSet.dataset.nowIndex = targetIndex;
   }
 
   // 創建移動版選項按鈕
-  function _createMobileTabBtn(id, controls, textContent) {
+  function createMobileTabBtn(id, controls, textContent) {
     const mobileTabBtn = document.createElement('button');
     mobileTabBtn.classList.add('mobileTabBtn');
     mobileTabBtn.setAttribute('id', id);
@@ -1335,10 +1108,10 @@ function tabFunction(obj) {
   }
 
   //執行
-  _tabInit(defaultIndex);
+  tabInit(openIndex);
 
   //切換動作
-  function _checkTarget(targetIndex) {
+  function checkTarget(targetIndex) {
     tabSet.dataset.nowIndex = targetIndex;
 
     //點選的按鈕增加active
@@ -1368,38 +1141,43 @@ function tabFunction(obj) {
 
   // 是否可開合/切換
   if (openSwitch) {
-    // 使用事件委派，將監聽器綁定到 tabSet 上
+    //tab動作
     tabSet.addEventListener('click', (e) => {
-      const target = e.target;
-      if (target.classList.contains('tabBtn')) {
-        const index = [...tabBtn].indexOf(target);
-        _checkTarget(index);
-      } else if (modeSwitch && target.classList.contains('mobileTabBtn')) {
-        const mobileTabBtn = tabSet.querySelectorAll('.mobileTabBtn');
-        const index = [...mobileTabBtn].indexOf(target);
-        _mobileTabFn(target, index, mobileTabBtn);
-      }
+      if (!e.target.classList.contains('tabBtn')) return;
+      let index = [...tabBtn].indexOf(e.target) % tabBtn.length;
+
+      checkTarget(index);
     });
 
     tabSet.addEventListener('keydown', (e) => {
       if (!e.target.classList.contains('tabBtn')) return;
       let index;
-      // 左右操作tab
-      if (e.code === 'ArrowRight' || e.code === 'ArrowLeft') {
-        const currentIndex = [...tabBtn].indexOf(e.target);
-        if (e.code === 'ArrowRight') {
-          index = (currentIndex + 1) % tabBtn.length;
-        } else {
-          index = (currentIndex - 1 + tabBtn.length) % tabBtn.length;
-        }
+      //左右操作tab
+      if (e.code === 'ArrowRight') {
+        index = ([...tabBtn].indexOf(e.target) + 1) % tabBtn.length;
         tabBtn[index].focus();
-        _checkTarget(index);
+        checkTarget(index);
+      } else if (e.code === 'ArrowLeft') {
+        index = ([...tabBtn].indexOf(e.target) - 1 + tabBtn.length) % tabBtn.length;
+        tabBtn[index].focus();
+        checkTarget(index);
       }
     });
+
+    //模式切換-手風琴動作
+    if (modeSwitch) {
+      const mobileTabBtn = tabSet.querySelectorAll('.mobileTabBtn');
+
+      tabSet.addEventListener('click', (e) => {
+        if (!e.target.classList.contains('mobileTabBtn')) return;
+        let index = [...mobileTabBtn].indexOf(e.target) % mobileTabBtn.length;
+        mobileTabFn(mobileTabBtn[index], index, mobileTabBtn);
+      });
+    }
   }
 
-  function _mobileTabFn(btn, i, mobileTabBtn) {
-    _jsSlideToggle(tabContentIn[i]);
+  function mobileTabFn(btn, i, mobileTabBtn) {
+    jsSlideToggle(tabContentIn[i]);
     tabSet.dataset.nowIndex = i;
     let check = btn.getAttribute('aria-expanded') === 'true' ? false : true;
     btn.setAttribute('aria-expanded', check);
@@ -1413,7 +1191,7 @@ function tabFunction(obj) {
     });
     const siblingsPanel = [...tabContentIn].filter((value) => value !== tabContentIn[i]);
     siblingsPanel.forEach((value) => {
-      _jsSlideUp(value);
+      jsSlideUp(value);
     });
     setTimeout(() => {
       let btnClientRect = btn.getBoundingClientRect();
@@ -1426,18 +1204,18 @@ function tabFunction(obj) {
     }, 200);
   }
 
-  function _removeAttributeFn(item) {
+  function removeAttributeFn(item) {
     item.removeAttribute('role');
     item.removeAttribute('aria-labelledby');
     item.removeAttribute('id');
   }
-  function _setAttributeFn(item, role, id, labelledby) {
+  function setAttributeFn(item, role, id, labelledby) {
     item.setAttribute('role', role);
     item.setAttribute('id', id);
     item.setAttribute('aria-labelledby', labelledby);
   }
   //模式切換-RWD
-  function _checkRWD() {
+  function checkRWD() {
     const tabpanelBtn = tabSet.querySelectorAll('.tabContent .mobileTabBtn');
     const nowOpen = tabSet.dataset.nowIndex;
 
@@ -1474,12 +1252,12 @@ function tabFunction(obj) {
         //顯示所有tab內容標籤
         tabContent[i].removeAttribute('style');
         //移除tab內容標籤
-        _removeAttributeFn(tabContent[i]);
+        removeAttributeFn(tabContent[i]);
 
         //顯示手風琴標籤按鈕
         tabpanelBtn[i].removeAttribute('style');
         //新增手風琴內容標籤
-        _setAttributeFn(tabContentIn[i], 'region', controls, id);
+        setAttributeFn(tabContentIn[i], 'region', controls, id);
         tabContentIn[i].style.display = 'none';
       });
 
@@ -1512,13 +1290,13 @@ function tabFunction(obj) {
         //顯示所有Tab內容
         tabContentIn[i].removeAttribute('style');
         //移除Tab內容標籤
-        _removeAttributeFn(tabContentIn[i]);
+        removeAttributeFn(tabContentIn[i]);
         tabContentIn[i].removeAttribute('style');
 
         //隱藏Tab標籤按鈕
         tabpanelBtn[i].style.display = 'none';
         //新增Tab內容標籤
-        _setAttributeFn(tabContent[i], 'tabpanel', controls, id);
+        setAttributeFn(tabContent[i], 'tabpanel', controls, id);
       });
 
       //展開目前Tab內容
@@ -1532,14 +1310,15 @@ function tabFunction(obj) {
       });
     }
   }
-  _checkRWD();
-  window.addEventListener('resize', _checkRWD);
+  checkRWD();
+  window.addEventListener('resize', checkRWD);
 }
 
 // tabFunction({
 //   target: '.target1', // 執行目標，多組需要另外設定
 //   modeSwitch: false, // 自動切換，尺寸以上tab功能，尺寸以下手風琴功能
 //   openContent: false, // 展開所有內容，僅開啟模式切換時才可使用
+//   openIndex: 0, // 開啟第幾個
 //   width: 767, // 尺寸以上tab功能，尺寸以下手風琴功能
 //   autoClose: true, // 自動關閉其他開啟內容
 //   openSwitch: true, // 是否可開合/切換
@@ -1549,7 +1328,7 @@ function tabFunction(obj) {
 // -----   Accordion設定   ------------------------------------------------
 // -----------------------------------------------------------------------
 function accordionFunction(obj) {
-  const { target, openContent = false, openDefault = false, autoClose = true, openSwitch = true } = obj;
+  const { target, openContent = false, openDefault = false, openIndex = 0, autoClose = true, openSwitch = true, info } = obj;
 
   const accordionSet = document.querySelector(target);
   if (!accordionSet) return;
@@ -1558,15 +1337,14 @@ function accordionFunction(obj) {
 
   const infoOpen = accordionSet.dataset.stateOpen;
   const infoClose = accordionSet.dataset.stateClose;
-  const accordionList = accordionSet.querySelectorAll('.accordionList');
   const accordionBtns = accordionSet.querySelectorAll('.accordionBtn');
   const accordionCons = accordionSet.querySelectorAll('.accordionContent');
-  const defaultIndex = [...accordionList].indexOf(accordionSet.querySelector('.active')) === -1 ? 0 : [...accordionList].indexOf(accordionSet.querySelector('.active'));
 
   //初始設定
-  function _accordionInit() {
+  function accordionInit(targetIndex) {
+    accordionSet.dataset.nowIndex = targetIndex;
     accordionBtns.forEach((accordion, i) => {
-      const id = `accordion_${_randomLetter(3)}${_randomNumber(3)}`;
+      const id = `accordion_${randomLetter(3)}${randomFloor(0, 999)}`;
       const controls = `${id}_con`;
 
       // 增加展開說明文字
@@ -1603,17 +1381,17 @@ function accordionFunction(obj) {
     });
 
     if (openDefault) {
-      accordionBtns[defaultIndex].parentElement.classList.add('active');
-      accordionBtns[defaultIndex].setAttribute('aria-expanded', 'true');
-      _jsSlideDown(accordionCons[defaultIndex]);
-      if (openSwitch) accordionBtns[defaultIndex].querySelector('.accordionState span').textContent = infoClose;
+      accordionBtns[openIndex].parentElement.classList.add('active');
+      accordionBtns[openIndex].setAttribute('aria-expanded', 'true');
+      jsSlideDown(accordionCons[openIndex]);
+      if (openSwitch) accordionBtns[openIndex].querySelector('.accordionState span').textContent = infoClose;
     }
   }
-  _accordionInit();
+  accordionInit(openIndex);
 
-  function _accordionFn(btn, i) {
+  function accordionFn(btn, i) {
     const accordionState = btn.querySelector('.accordionState span');
-    _jsSlideToggle(accordionCons[i]);
+    jsSlideToggle(accordionCons[i]);
     accordionSet.dataset.nowIndex = i;
     let infoText = accordionState.textContent === infoClose ? infoOpen : infoClose;
     let expanded = btn.getAttribute('aria-expanded') === 'true' ? false : true;
@@ -1628,7 +1406,7 @@ function accordionFunction(obj) {
       value.querySelector('.accordionState span').textContent = infoOpen;
     });
     const siblingsAccordionCons = [...accordionCons].filter((value) => value !== accordionCons[i]);
-    siblingsAccordionCons.forEach((value) => _jsSlideUp(value));
+    siblingsAccordionCons.forEach((value) => jsSlideUp(value));
     setTimeout(() => {
       let btnClientRect = btn.getBoundingClientRect();
       if (btnClientRect.y < 0) {
@@ -1645,7 +1423,7 @@ function accordionFunction(obj) {
     accordionBtns.forEach((btn, i) => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
-        _accordionFn(btn, i);
+        accordionFn(btn, i);
       });
     });
   }
@@ -1682,10 +1460,10 @@ function fatFooter() {
 
   fatFooterBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    fatFooterCon.forEach((i) => _toggleFatFooter(i, 400));
+    fatFooterCon.forEach((i) => toggleFatFooter(i, 400));
   });
 
-  function _toggleFatFooter(element, time = 200) {
+  function toggleFatFooter(element, time = 200) {
     let ele = window.getComputedStyle(element);
 
     let display = ele.display;
@@ -1733,6 +1511,213 @@ function fatFooter() {
 window.addEventListener('load', () => fatFooter());
 
 // -----------------------------------------------------------------------
+// -----  sideNav   ------------------------------------------------------
+// -----------------------------------------------------------------------
+function sideNav(options) {
+  const body = document.querySelector('body');
+  const { showDefault = true, needLink = false, duration = 200, floatType = true } = options;
+  const mainBox = document.querySelector('.innerPage .mainBox');
+  if (!mainBox) return;
+  const sideNav = mainBox.querySelector('.sideNav');
+  if (!sideNav) return;
+  const mainContentBox = mainBox.querySelector('.mainContentBox');
+
+  floatType ? sideNav.classList.add('typeA') : sideNav.classList.add('typeB');
+
+  const nextOpen = sideNav.dataset.nextOpen || '開啟下層選單 ';
+  const nextClose = sideNav.dataset.nextClose || '收合下層選單';
+
+  const hasSideNavGap = parseInt(getComputedStyle(mainBox).gap.replace('px', ''));
+  let sideNavWidth = sideNav.offsetWidth;
+  mainContentBox.style.width = `calc(100% - ${hasSideNavGap + sideNavWidth}px)`;
+
+  const sideMenu = sideNav.querySelector('nav#sideMenu');
+  if (!sideMenu) return;
+  const sideMenuContent = sideMenu.querySelector('.sideMenuContent');
+  sideMenu.dataset.width = parseInt(getComputedStyle(sideMenuContent).width.replace('px', ''));
+  const sideNavBtn = sideNav.querySelector('#sideNavBtn');
+  const allTarget = sideNav.querySelectorAll('a, button, input, select');
+
+  if (sideNavBtn) {
+    // 統一設定無障礙相關屬性與過渡效果
+    function setTransitionBtn(btn, expanded, left = null, toLeft = null) {
+      btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      btn.setAttribute('aria-haspopup', 'true');
+      btn.setAttribute('aria-controls', 'sideMenu');
+      btn.classList.toggle('active');
+
+      if (window.outerWidth <= setRWDWidth && floatType) {
+        mainContentBox.removeAttribute('style');
+        btn.style.transitionProperty = 'left';
+        btn.style.transitionDuration = `${duration}ms`;
+        btn.style.left = `${left}px`;
+        setTimeout(() => {
+          btn.style.left = `${toLeft}px`;
+        });
+        setTimeout(() => {
+          btn.style.removeProperty('transition-duration');
+          btn.style.removeProperty('transition-property');
+        }, duration);
+      }
+    }
+    setTransitionBtn(sideNavBtn, showDefault);
+
+    function setTransition(elem, width, toWidth, dn) {
+      if ((window.outerWidth <= setRWDWidth && floatType) || window.outerWidth > setRWDWidth) {
+        elem.style.overflow = 'hidden';
+        elem.style.transitionProperty = 'width';
+        elem.style.transitionDuration = `${duration}ms`;
+        elem.style.width = `${width}px`;
+        setTimeout(() => {
+          elem.style.width = `${toWidth}px`;
+        });
+        setTimeout(() => {
+          sideMenu.style.removeProperty('width');
+          sideMenu.style.removeProperty('overflow');
+          elem.style.removeProperty('transition-duration');
+          elem.style.removeProperty('transition-property');
+          if (dn) {
+            elem.style.display = 'none';
+          }
+        }, duration);
+      } else if (window.outerWidth <= setRWDWidth && !floatType) {
+        jsSlideToggle(sideMenu);
+      }
+    }
+
+    const sideMenuWidth = sideMenu.dataset.width;
+    sideNavBtn.addEventListener('click', () => {
+      const menuStyle = getComputedStyle(sideMenu);
+      const isClosed = menuStyle.display === 'none';
+
+      if (isClosed) {
+        // ---- 開啟選單 ----
+        sideMenu.style.display = 'block';
+        setTransition(sideMenu, 0, sideMenuWidth, false);
+        setTransitionBtn(sideNavBtn, true, 0, sideMenuWidth);
+        // 若為 mobile 模式，更新按鈕位置
+        if (window.outerWidth > setRWDWidth) {
+          mainContentBox.style.width = `calc(100% - ${hasSideNavGap + sideNavWidth}px)`;
+        }
+      } else {
+        // ---- 關閉選單 ----
+        setTransition(sideMenu, sideMenuWidth, 0, true);
+        setTransitionBtn(sideNavBtn, false, sideMenuWidth, 0);
+      }
+    });
+  }
+
+  // 設定 sideMenu 的無障礙屬性
+  sideMenu.setAttribute('aria-labelledby', 'sideNavBtn');
+  sideMenu.setAttribute('role', 'navigation');
+
+  // 為含下層選單的 li 加上 hasChild 類別
+  sideMenu.querySelectorAll('li ul').forEach((item) => item.parentNode.classList.add('hasChild'));
+
+  // 設定所有含子選單項目的無障礙與點擊處理
+  sideMenu.querySelectorAll('.hasChild').forEach((item) => {
+    const uid = `sn_${randomLetter(3)}${randomFloor(0, 999)}`;
+    let childControl;
+    if (!needLink) {
+      childControl = item.querySelector('a');
+      childControl.setAttribute('role', 'button');
+    } else {
+      item.classList.add('needLink');
+      const nextBtn = document.createElement('button');
+      nextBtn.classList.add('nextLvl');
+      item.querySelector('a').insertAdjacentElement('afterend', nextBtn);
+      nextBtn.setAttribute('type', 'button');
+      nextBtn.setAttribute('aria-label', nextOpen);
+      childControl = nextBtn;
+    }
+    const childUl = item.querySelector('ul');
+    childControl.setAttribute('aria-expanded', 'false');
+    childControl.setAttribute('aria-haspopup', 'true');
+    childControl.setAttribute('id', uid);
+    childControl.setAttribute('aria-controls', `${uid}_con`);
+    childUl.setAttribute('id', `${uid}_con`);
+    childUl.setAttribute('aria-labelledby', uid);
+    childControl.addEventListener('click', (e) => {
+      e.preventDefault();
+      toggleAccordion(childControl, 'ul', item);
+    });
+  });
+
+  // 手風琴切換函式
+  function toggleAccordion(control, selector, parent) {
+    const content = control.parentNode.querySelector(selector);
+    const isVisible = getComputedStyle(content).display !== 'none';
+    control.setAttribute('aria-expanded', isVisible ? 'false' : 'true');
+    parent.classList.toggle('active');
+    jsSlideToggle(content);
+    if (needLink) {
+      control.setAttribute('aria-label', isVisible ? nextOpen : nextClose);
+    }
+    // 收合同層其他項目
+    const sibling = [...control.parentNode.parentNode.children].filter((item) => item !== parent);
+
+    sibling.forEach((item) => {
+      item.querySelector(selector) !== null ? jsSlideUp(item.querySelector(selector)) : null;
+      if (needLink) {
+        item.querySelector('button')?.setAttribute('aria-expanded', 'false');
+        item.querySelector('button')?.setAttribute('aria-label', nextOpen);
+      } else {
+        item.querySelector('a').setAttribute('aria-expanded', 'false');
+      }
+      item.classList.remove('active');
+    });
+  }
+
+  let checkRwd = window.outerWidth < setRWDWidth;
+  // 鍵盤無障礙設定（僅限 RWD 狀態下有效）
+  body.addEventListener('keydown', (e) => {
+    if (checkRwd && sideNavBtn.getAttribute('aria-expanded') === 'true') {
+      const focusable = [...allTarget].filter((item) => item.getBoundingClientRect().height !== 0);
+      const lastFocusable = focusable[focusable.length - 1];
+      if (e.code === 'Tab') {
+        if (e.shiftKey && e.target === allTarget[0]) {
+          e.preventDefault();
+          lastFocusable.focus();
+        } else if (!e.shiftKey && e.target === lastFocusable) {
+          e.preventDefault();
+          sideNavBtn.focus();
+        }
+      }
+    }
+  });
+
+  // 視窗載入與重置事件：調整響應式設定
+  const checkRwdFn = () => {
+    sideNavWidth = sideNav.offsetWidth;
+    if (window.outerWidth <= setRWDWidth) {
+      checkRwd = true;
+      mainContentBox.removeAttribute('style');
+      sideNavBtn.classList.remove('active');
+      sideNavBtn.setAttribute('aria-expanded', 'false');
+      if (floatType) {
+        sideNavBtn.style.left = '';
+        sideNavBtn.style.top = `80px`;
+        sideMenu.removeAttribute('style');
+      } else {
+        jsSlideUp(sideMenu);
+      }
+    } else if (window.outerWidth > setRWDWidth && checkRwd === true) {
+      checkRwd = false;
+      sideNavBtn.classList.add('active');
+      sideNavBtn.setAttribute('aria-expanded', 'true');
+      sideMenu.removeAttribute('style');
+      if (floatType) {
+        mainContentBox.style.width = `calc(100% - ${hasSideNavGap + sideNav.offsetWidth}px)`;
+      } else {
+        jsSlideDown(sideMenu);
+      }
+    }
+  };
+  checkRwdFn();
+  window.addEventListener('resize', () => checkRwdFn());
+}
+
+// -----------------------------------------------------------------------
 // -----   tableList樣式 加上 data-title   -------------------------------
 // -----------------------------------------------------------------------
 
@@ -1742,11 +1727,11 @@ function tableAddDataAttributes() {
   el.forEach((i) => {
     const tableItem = i.querySelectorAll('table');
     tableItem.forEach((i) => {
-      _setTrAttr(i);
+      setTrAttr(i);
       i.classList.add('loaded');
     });
   });
-  function _setTrAttr(i) {
+  function setTrAttr(i) {
     const thList = i.querySelectorAll('th');
     const trList = i.querySelectorAll('tr');
     trList.forEach((trItem) => {
@@ -1793,10 +1778,10 @@ function scrollTables() {
     let tableScrollWidth = tableScrollIn.scrollWidth;
 
     tableScrollIn.addEventListener('scroll', () => {
-      _checkScroll(tableScrollLeft, tableClientWidth, tableScrollWidth);
+      checkScroll(tableScrollLeft, tableClientWidth, tableScrollWidth);
     });
 
-    function _checkScroll(tableScrollLeft, tableClientWidth, tableScrollWidth) {
+    function checkScroll(tableScrollLeft, tableClientWidth, tableScrollWidth) {
       tableScrollLeft = tableScrollIn.scrollLeft;
       tableClientWidth = tableScrollIn.clientWidth;
       tableScrollWidth = table.scrollWidth;
@@ -1813,8 +1798,8 @@ function scrollTables() {
       }
     }
 
-    _checkScroll(tableScrollLeft, tableClientWidth, tableScrollWidth);
-    window.addEventListener('resize', () => _checkScroll(tableScrollLeft, tableClientWidth, tableScrollWidth));
+    checkScroll(tableScrollLeft, tableClientWidth, tableScrollWidth);
+    window.addEventListener('resize', () => checkScroll(tableScrollLeft, tableClientWidth, tableScrollWidth));
 
     prevBtn.addEventListener('click', (e) => {
       e.preventDefault();
@@ -1827,6 +1812,40 @@ function scrollTables() {
   });
 }
 window.addEventListener('load', () => scrollTables());
+
+// -----------------------------------------------------------------------
+// -----   swiperAutoPlay切換功能   -----------------------------------
+// -----------------------------------------------------------------------
+function swiperAutoPlaysFn(swiper, elem) {
+  const autoPlaySwitch = swiper.el.parentNode.parentNode.querySelector('.autoPlaySwitch');
+
+  if (!autoPlaySwitch) return;
+  let nowState = swiper.autoplay.running ? true : false;
+  let infoPlay = autoPlaySwitch.dataset.infoPlay;
+  let infoStop = autoPlaySwitch.dataset.infoStop;
+  nowState ? autoPlaySwitch.classList.add('stop') : autoPlaySwitch.classList.add('play');
+  autoPlaySwitch.setAttribute('aria-label', infoStop);
+  autoPlaySwitch.setAttribute('data-altlabel', infoPlay);
+
+  autoPlaySwitch.addEventListener('click', (e) => {
+    if (nowState) {
+      nowState = false;
+      swiper.autoplay.stop();
+      autoPlaySwitch.classList.add('play');
+      autoPlaySwitch.classList.remove('stop');
+      autoPlaySwitch.setAttribute('aria-label', infoPlay);
+      autoPlaySwitch.setAttribute('data-altlabel', infoStop);
+    } else {
+      nowState = true;
+      swiper.autoplay.start();
+      autoPlaySwitch.classList.add('stop');
+      autoPlaySwitch.classList.remove('play');
+      autoPlaySwitch.setAttribute('aria-label', infoStop);
+      autoPlaySwitch.setAttribute('data-altlabel', infoPlay);
+    }
+  });
+  swiper.slides.length === 1 ? autoPlaySwitch.remove() : null;
+}
 
 // -----------------------------------------------------------------------
 // -----   swiper無障礙功能   -----------------------------------
@@ -1948,13 +1967,13 @@ function scrollTopFn() {
   let scrollY = window.scrollY;
   if (!scrollTop) return;
 
-  function _scrollFn() {
+  function scrollFN() {
     scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
   }
 
   window.addEventListener('scroll', () => {
     scrollY = window.scrollY;
-    _scrollFn();
+    scrollFN();
   });
 
   scrollTop.addEventListener('click', () => {
@@ -1974,10 +1993,10 @@ function addFile() {
   if (addFileName.length === 0) return;
 
   addFileName.forEach((i) => {
-    i.addEventListener('change', _pushFileName);
+    i.addEventListener('change', pushFileName);
   });
 
-  function _pushFileName(e) {
+  function pushFileName(e) {
     let fileLen = e.target.files.length;
     const uploadInput = e.target.parentNode.querySelector('.fileName');
 
@@ -1988,7 +2007,7 @@ function addFile() {
     uploadInput.textContent = allFileName.join(', ');
   }
 }
-window.addEventListener('load', () => addFile());
+addFile();
 
 // -----------------------------------------------------------------------
 // -----  橫式跑馬燈   -----------------------------------------------------
@@ -2022,8 +2041,8 @@ function marquee() {
       marqueeList.insertAdjacentElement('afterend', cloneList);
     }
     let allList = marqueeBox.querySelectorAll('.marqueeList');
-    function _marqueeMove() {
-      requestAnimationFrame(_marqueeMove);
+    function marqueeMove() {
+      requestAnimationFrame(marqueeMove);
       if (isHover || isPaused) return;
       sliderMovePx++;
 
@@ -2035,7 +2054,7 @@ function marquee() {
         sliderMovePx = 0;
       }
     }
-    _marqueeMove();
+    marqueeMove();
     marqueeBox.addEventListener('mouseenter', () => {
       isHover = true;
     });
@@ -2082,8 +2101,8 @@ function marquee() {
     });
   });
 }
-window.addEventListener('load', () => marquee());
 
+window.addEventListener('load', () => marquee());
 // -----------------------------------------------------------------------
 // -----  無障礙快捷鍵盤組合 a11yKeyCode   ----------------------------------
 // -----------------------------------------------------------------------
@@ -2112,7 +2131,7 @@ window.addEventListener('load', () => a11yKeyCode());
 // -----------------------------------------------------------------------
 // -----   fancyBox新增需要綁定才有效果   -----------------------------------
 // -----------------------------------------------------------------------
-function popupFn() {
+function fancyBoxFn() {
   const fancyBoxElem = document.querySelectorAll('[data-fancybox]');
   if (fancyBoxElem.length === 0) return;
   // 確認引入語系
@@ -2140,7 +2159,6 @@ function popupFn() {
           let closeBtn = fancyboxRef.container?.querySelector('[data-fancybox-close]');
           closeBtn?.insertAdjacentHTML('afterbegin', `<span>${fancyboxRef.options.l10n.CLOSE}</span>`);
           closeBtn.setAttribute('aria-label', fancyboxRef.options.l10n.CLOSE);
-          closeBtn.focus();
         }
       },
     },
@@ -2165,7 +2183,6 @@ function popupFn() {
               let closeBtn = fancyboxRef.container?.querySelector('[data-fancybox-close]');
               closeBtn?.insertAdjacentHTML('afterbegin', `<span>${fancyboxRef.options.l10n.CLOSE}</span>`);
               closeBtn.setAttribute('aria-label', fancyboxRef.options.l10n.CLOSE);
-              closeBtn.focus();
             }
           },
         },
@@ -2173,4 +2190,5 @@ function popupFn() {
     );
   }
 }
-window.addEventListener('load', () => popupFn());
+
+window.addEventListener('load', () => fancyBoxFn());

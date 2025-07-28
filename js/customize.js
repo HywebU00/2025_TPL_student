@@ -8,6 +8,7 @@ mainMenu({
 // 側邊選單
 sideNav({
   needLink: false, // 如果同時需要連結和下層功能時
+  float: false, // 是否浮動
   floatType: true, // 切換是否由左側展開或是下方展開
 });
 
@@ -36,13 +37,13 @@ accordionFunction({
 });
 
 window.addEventListener('load', () => {
-  toggleSlider('header .subNavList .language > button', 'header .subNavList .language ul'); //語系開關切換
-  toggleSlider('header .navList .language > button', 'header .navList .language ul'); //語系開關切換
-  toggleSlider('#mobileMenu .language > button', '#mobileMenu .language ul'); //語系開關切換手機版
-  toggleSlider('header .fontSize > button', 'header .fontSize ul'); //文字大小展開開關切換
-  toggleSlider('.shareBox .share', '.shareBox .shareBoxList'); //分享開關切換
-  toggleSlider('.contentSearchBtn', '.contentSearchBox', false); //LP 內容搜尋
-  toggleSlider('.floatNav .floatSwitchBtn', '.floatNav .typeA'); //LP 內容搜尋
+  _toggleDropdown('header .subNavList .language > button', 'header .subNavList .language ul'); //語系開關切換
+  _toggleDropdown('header .navList .language > button', 'header .navList .language ul'); //語系開關切換
+  _toggleDropdown('#mobileMenu .language > button', '#mobileMenu .language ul'); //語系開關切換手機版
+  _toggleDropdown('header .fontSize > button', 'header .fontSize ul'); //文字大小展開開關切換
+  _toggleDropdown('.shareBox .share', '.shareBox .shareBoxList'); //分享開關切換
+  _toggleDropdown('.contentSearchBtn', '.contentSearchBox', false); //LP 內容搜尋
+  _toggleDropdown('.floatNav .floatSwitchBtn', '.floatNav .typeA'); //LP 內容搜尋
 
   //mp2 多筆swiper輪播
   const multipleSlider = document.querySelectorAll('.blockTypeG .multipleSlider');

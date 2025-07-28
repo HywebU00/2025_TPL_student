@@ -7,7 +7,7 @@
     @include liReset;
 
     li {
-      @include screen('mobile') {
+      @include screen("mobile") {
         flex-grow: 1;
       }
     }
@@ -20,32 +20,27 @@
       gap: 4px;
       border-radius: var(--borderRadius2);
       background: #fff;
-      box-shadow: 0px 2px 6px 0px rgba(38, 43, 67, 0.20);
+      box-shadow: 0px 2px 6px 0px rgba(38, 43, 67, 0.2);
       line-height: 2;
       color: #111;
       text-decoration: none;
 
-      @include screen('tablet') {
+      @include screen("tablet") {
         padding: 4px 16px;
       }
-
-      // &::before {
-      //   content: '';
-      //   width: 18px;
-      //   height: 18px;
-      //   background-image: url('../images/basic/icon/tag_dk.svg');
-      //   background-repeat: no-repeat;
-      //   background-size: contain;
-      // }
       &.active,
       &:hover {
-        color: #fff;
-        background: $colorPrimary;
+        color: #000;
+        background: #ffdb01;
 
         i::before,
         &::before {
           filter: invert(100%) brightness(200%);
         }
+      }
+      sub {
+        font-size: 100%;
+        bottom: auto;
       }
     }
   }

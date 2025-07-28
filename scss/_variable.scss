@@ -1,16 +1,16 @@
 @use "sass:color";
 //-------------------------------------------------------------顏色---------//
 // 定義顏色 此顏色可自由變換
-$colorPrimary: #0156a2; //主色
+$colorPrimary: #2f476b; //主色
 $colorPrimaryLight: color.mix($colorPrimary, #fff, 10%); //主色淺色
 $colorPrimaryDark: color.mix($colorPrimary, #000, 90%); //主色深色
 
-$colorSecondary: #326dc7; //輔色
+$colorSecondary: #666; //輔色
 $colorSecondaryLight: color.mix($colorSecondary, #fff, 10%); //輔色淺色
 $colorSecondaryDark: color.mix($colorSecondary, #000, 90%); //輔色深色
 
 // word顏色設定
-$colorWord: #333333;
+$colorWord: #1a1a1a;
 $colorWordLight: #555555;
 $colorWordDark: #111111;
 
@@ -72,14 +72,14 @@ $formDisabled: $colorDisabled;
 // table
 $tableBorder: #f1f1f1;
 // table th
-$tablePrimary: $colorPrimary;
+$tablePrimary: #666;
 $tableSecondary: $colorSecondary;
 $tableNormal: $colorDisabled;
 
 //-------------------------------------------------------------字型--------//
 
 // 字型設定
-$arial: Arial, "微軟正黑體", "Microsoft JhengHei", "蘋果儷中黑",
+$arial: Arial, "PingFang TC", "微軟正黑體", "Microsoft JhengHei", "蘋果儷中黑",
   "Apple LiGothic Medium", sans-serif, "0xe804";
 $NotoSansTC: "Noto Sans TC", Arial, "微軟正黑體", "Microsoft JhengHei",
   "蘋果儷中黑", "Apple LiGothic Medium", sans-serif, "0xe804";
@@ -89,7 +89,7 @@ $NotoSansTC: "Noto Sans TC", Arial, "微軟正黑體", "Microsoft JhengHei",
 $mainFontSize: 16;
 
 // 內容尺寸設定
-$domWidth: 1440px;
+$domWidth: 1200px;
 
 // flexTemplate gap值
 $flexTemplateGap: 24;

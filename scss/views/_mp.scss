@@ -138,7 +138,7 @@
     }
   }
 }
-section:has(.noticeSlider) {
+.mainBox:has(.noticeSlider) {
   padding-bottom: 40px;
   .container {
     .flexTpl_2 {

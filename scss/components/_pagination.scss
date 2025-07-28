@@ -11,15 +11,28 @@
     justify-content: center;
     align-items: center;
     gap: 8px;
-    color: #555;
+    color: #1a1a1a;
 
     span {
-      color: #3772CC;
+      color: $colorPrimary;
+      font-weight: bold;
     }
 
     button {
-      border-radius: var(--borderRadius2);
+      border-radius: 4px;
       line-height: 2;
+    }
+
+    .count {
+      padding: 0px 8px;
+      background: none;
+      color: $colorPrimary;
+      font-weight: bold;
+
+      &.active {
+        background: $colorPrimary;
+        color: #fff;
+      }
     }
   }
 
@@ -30,7 +43,7 @@
     justify-content: center;
     gap: 8px;
 
-    @include screen('mobile') {
+    @include screen("mobile") {
       gap: 5px;
     }
   }
@@ -54,8 +67,9 @@
       align-items: center;
       gap: 10px;
       color: $colorWord;
-      background: #DEE0E3;
-      border-radius: var(--borderRadius2);
+      // background: #dee0e3;
+      @include gradient(#f6f5f5, #e9e6e6, vertical);
+      border-radius: 4px;
       text-decoration: none;
 
       &:hover {
@@ -73,12 +87,12 @@
       a {
         color: transparent;
         border: none;
-        font-size: 0px;
+        font-size: 0;
         position: relative;
         background: #fff;
 
         &::before {
-          content: '';
+          content: "";
           width: 24px;
           height: 24px;
           background-repeat: no-repeat;
@@ -103,37 +117,36 @@
 
       &.firstArrow,
       &.lastArrow {
-        @include screen('mobile') {
+        @include screen("mobile") {
           display: none;
         }
       }
 
       &.firstArrow {
         a::before {
-          background-image: url('../images/basic/icon/first_page_dk.svg');
+          background-image: url("../images/basic/icon/first_page_dk.svg");
         }
       }
 
       &.lastArrow {
         a::before {
           transform: scale(-1) translate(50%, 50%);
-          background-image: url('../images/basic/icon/first_page_dk.svg');
+          background-image: url("../images/basic/icon/first_page_dk.svg");
         }
       }
 
       &.prevArrow {
         a::before {
-          background-image: url('../images/basic/icon/arrow_left_dk.svg');
+          background-image: url("../images/basic/icon/arrow_left_dk.svg");
         }
       }
 
       &.nextArrow {
         a::before {
           transform: scale(-1) translate(50%, 50%);
-          background-image: url('../images/basic/icon/arrow_left_dk.svg');
+          background-image: url("../images/basic/icon/arrow_left_dk.svg");
         }
       }
     }
   }
-
 }

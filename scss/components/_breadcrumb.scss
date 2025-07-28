@@ -1,17 +1,16 @@
 .breadcrumb {
-
   ul {
     display: flex;
     flex-flow: row wrap;
 
     li {
       margin: 0px 0.1em 0.1em 0px;
-      color: #69707D;
+      color: #69707d;
       line-height: 2;
 
       & + li {
         &:before {
-          content: ' / ';
+          content: " / ";
           display: inline-block;
           padding: 0px 4px;
           margin: 0px 5px 0px 5px;
@@ -23,7 +22,7 @@
         text-decoration: none;
 
         &:not(:hover) {
-          color: #69707D;
+          color: #69707d;
         }
       }
     }

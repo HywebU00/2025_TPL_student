@@ -18,6 +18,9 @@ header {
     @include screen("tablet") {
       padding: 0 60px;
     }
+    @include screen("mobile") {
+      padding: 0 0 0 60px;
+    }
     &:has(.topSearch) {
       .topNav {
         width: auto;
@@ -26,6 +29,9 @@ header {
     }
     .container {
       max-width: 1140px;
+      @include screen("mobile") {
+        padding: 0;
+      }
     }
   }
 
