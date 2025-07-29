@@ -14,8 +14,8 @@
     color: transparent !important;
 
     &::before {
-      content: '';
-      background-image: url('../images/basic/icon/back_dk.svg');
+      content: "";
+      background-image: url("../images/basic/icon/back_dk.svg");
     }
   }
 
@@ -24,8 +24,8 @@
     color: transparent !important;
 
     &::before {
-      content: '';
-      background-image: url('../images/basic/icon/print_dk.svg');
+      content: "";
+      background-image: url("../images/basic/icon/print_dk.svg");
     }
   }
 
@@ -34,8 +34,8 @@
     color: transparent !important;
 
     &::before {
-      content: '';
-      background-image: url('../images/basic/icon/mail_dk.svg');
+      content: "";
+      background-image: url("../images/basic/icon/mail_dk.svg");
     }
   }
 }
@@ -58,7 +58,7 @@
   @include transition(0.3);
   overflow: hidden;
 
-  @include screen('tablet') {
+  @include screen("tablet") {
     width: 42px;
     height: 42px;
   }
@@ -66,8 +66,8 @@
   &.active,
   &:hover {
     color: #fff;
-    border-color: $colorPrimary;
-    background: $colorPrimary;
+    border-color: #000;
+    background: #000;
 
     &::before {
       filter: brightness(100);
@@ -94,12 +94,12 @@
   display: flex;
   align-items: center;
 
-  @include screen('tablet') {
+  @include screen("tablet") {
     display: none;
   }
 
   span {
-    @include screen('tablet') {
+    @include screen("tablet") {
       font-size: Rem(13);
     }
   }
@@ -111,7 +111,6 @@
     @include liReset;
 
     li {
-
       &.active {
         button {
           color: #fff;
@@ -123,7 +122,6 @@
   }
 }
 
-
 // 內容搜尋
 .contentSearchBtn {
   width: fit-content;
@@ -132,10 +130,10 @@
   padding: 6px 16px;
 
   &::before {
-    content: '';
+    content: "";
     width: 20px;
     height: 20px;
-    background-image: url('../images/basic/icon/search_w.svg');
+    background-image: url("../images/basic/icon/search_w.svg");
     background-repeat: no-repeat;
     background-size: contain;
   }
@@ -146,8 +144,8 @@
   border-top: 3px solid $colorPrimary;
   order: 99;
   width: 100%;
-  box-shadow: 0px 4px 16px -4px rgba(38, 43, 67, 0.30);
-  background: #F1F1F1;
+  box-shadow: 0px 4px 16px -4px rgba(38, 43, 67, 0.3);
+  background: #f1f1f1;
 
   .searchContent {
     padding: 24px;
@@ -171,24 +169,24 @@
       position: relative;
       margin: 0;
 
-      @include screen('mobile') {
+      @include screen("mobile") {
         flex-direction: column;
       }
 
       &:not(:last-child) {
-        border-bottom: 1px dashed #DEE0E3;
+        border-bottom: 1px dashed #dee0e3;
       }
 
       &:has(textarea) {
         align-items: flex-start;
       }
 
-      [type='date'] {
+      [type="date"] {
         & + span {
           display: block;
           margin: 0 10px;
 
-          @include screen('mobile') {
+          @include screen("mobile") {
             display: none;
           }
         }
@@ -204,7 +202,7 @@
     textarea {
       flex-grow: 1;
 
-      @include screen('mobile') {
+      @include screen("mobile") {
         width: 100%;
       }
     }

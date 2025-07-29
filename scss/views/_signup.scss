@@ -47,6 +47,7 @@
 }
 
 .searchResult {
+  margin-bottom: 50px;
   .title {
     font-size: Rem(24);
     font-weight: bold;
@@ -67,6 +68,170 @@
       li {
         a {
           color: $colorPrimary;
+        }
+      }
+    }
+  }
+}
+
+.calendar {
+  position: relative;
+  .manual {
+    position: absolute;
+    right: 0;
+    top: 8px;
+    font-size: Rem(18);
+    font-weight: bold;
+    @include screen("xsMobile") {
+      position: relative;
+      right: auto;
+      top: auto;
+      margin-bottom: 8px;
+    }
+    a {
+      color: #1a1a1a;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      @include screen("xsMobile") {
+        justify-content: center;
+      }
+      &:before {
+        content: "";
+        width: 24px;
+        height: 24px;
+        display: block;
+        background: url("../images/icon_download.svg") no-repeat center center;
+      }
+    }
+  }
+  .calendarNav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+    @include screen("mobile") {
+      justify-content: flex-start;
+    }
+    @include screen("xsMobile") {
+      margin: 10px 0;
+      justify-content: center;
+    }
+    button {
+      width: 44px;
+      height: 44px;
+      background: #454545;
+      text-indent: -9999px;
+      position: relative;
+      padding: 0;
+      &::before {
+        content: "";
+        display: block;
+        width: 11px;
+        height: 19px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transform-origin: center;
+        background: url("../images/date_arrow.png") no-repeat 0 0;
+      }
+      &.prevMonth {
+      }
+      &.nextMonth {
+        &::before {
+          transform: scale(-1) translate(50%, 50%);
+        }
+      }
+    }
+    .current {
+      margin: 0 20px;
+      font-size: Rem(34);
+      font-weight: bold;
+      color: #313131;
+      line-height: 1.2;
+      @include screen("xsMobile") {
+        margin: 0 10px;
+        font-size: Rem(30);
+      }
+      .year,
+      .month {
+        font-size: Rem(36);
+        color: #c84332;
+        margin: 0 16px;
+        @include screen("xsMobile") {
+          margin: 0 10px;
+          font-size: Rem(30);
+        }
+      }
+    }
+  }
+  table {
+    table-layout: fixed;
+    th,
+    td {
+      width: 171px;
+    }
+    th {
+      padding: 8px;
+      font-size: Rem(20);
+      background: #4c4c4c;
+      border-left: #525252 1px solid;
+      border-right: #f9f9f9 1px solid;
+      border-top: #525252 1px solid;
+      border-bottom: #525252 1px solid;
+      &:last-child {
+        border-right: #525252 1px solid;
+      }
+    }
+    td {
+      padding: 12px 8px;
+      vertical-align: top;
+      border-left: #525252 1px solid;
+      border-right: #525252 1px solid;
+      border-bottom: #525252 1px solid;
+      .date {
+        font-size: Rem(24);
+        line-height: 1.2;
+        font-weight: bold;
+        color: #c84332;
+      }
+      .period {
+        > div {
+          white-space: nowrap;
+          font-weight: 500;
+          &.available {
+            color: #c84332;
+            a {
+              color: #c84332;
+              display: block;
+              &:hover,
+              &:focus-visible {
+                text-decoration: underline;
+              }
+            }
+          }
+          &.booked {
+            color: #1a1a1a;
+          }
+          &.disable {
+            color: #999999;
+          }
+          &.closed {
+            font-size: Rem(24);
+            color: #1a1a1a;
+            text-align: center;
+            margin-top: 12px;
+          }
+        }
+      }
+      &.grey {
+        background: #e0e0e0;
+        .period {
+          > div {
+            color: #1a1a1a;
+          }
         }
       }
     }

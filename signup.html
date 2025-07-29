@@ -219,100 +219,807 @@
                   </div>
                 </div>
                 <!-- searchResult End -->
-
                 <!-- calendar Start -->
-                <div class="tableScroll">
-                  <button type="button" class="scrollTablePrevBtn">
-                    往左捲動
-                  </button>
-                  <button type="button" class="scrollTableNextBtn">
-                    往右捲動
-                  </button>
-                  <table>
-                    <thead>
-                      <tr>
-                        <th scope="col">週日</th>
-                        <th scope="col">週一</th>
-                        <th scope="col">週二</th>
-                        <th scope="col">週三</th>
-                        <th scope="col">週四</th>
-                        <th scope="col">週五</th>
-                        <th scope="col">週六</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <div class="date">1</div>
-                          <div class="period">
-                            <div class="available">
-                              <a
-                                href="#"
-                                data-fancybox=""
-                                data-src="#popup1"
-                                role="button"
-                                aria-haspopup="dialog"
-                                >上午：可報名</a
-                              >
+                <div class="calendar">
+                  <!-- calendarNav Start  -->
+                  <div class="calendarNav">
+                    <button type="button" class="prevMonth">上個月</button>
+                    <div class="current">
+                      <span class="year">2025</span>年<span class="month"
+                        >6</span
+                      >月
+                    </div>
+                    <button type="button" class="nextMonth">下個月</button>
+                  </div>
+                  <!-- calendarNav End -->
+                  <!-- 系統使用說明 Start -->
+                  <div class="manual">
+                    <a href="" title="系統使用說明（下載pdf）">系統使用說明</a>
+                  </div>
+                  <!-- 系統使用說明 End -->
+                  <!-- tableScroll Start -->
+                  <div class="tableScroll">
+                    <button type="button" class="scrollTablePrevBtn">
+                      往左捲動
+                    </button>
+                    <button type="button" class="scrollTableNextBtn">
+                      往右捲動
+                    </button>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th scope="col">週日</th>
+                          <th scope="col">週一</th>
+                          <th scope="col">週二</th>
+                          <th scope="col">週三</th>
+                          <th scope="col">週四</th>
+                          <th scope="col">週五</th>
+                          <th scope="col">週六</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <!-- week1 Start -->
+                        <tr>
+                          <td>
+                            <div class="date">1</div>
+                            <div class="period">
+                              <div class="available">
+                                <a
+                                  href="#"
+                                  data-fancybox=""
+                                  data-src="#popup1"
+                                  role="button"
+                                  aria-haspopup="dialog"
+                                  >上午：可報名（1/3）</a
+                                >
+                              </div>
+                              <div class="booked">下午：已額滿（3/3）</div>
+                              <div class="disable">晚上：未開放</div>
                             </div>
-                            <div class="full">下午：已額滿</div>
-                            <div class="disable">晚上：未開放</div>
-                          </div>
-                        </td>
-                        <td>王大明</td>
-                        <td>男</td>
-                        <td>39</td>
-                        <td>台北市</td>
-                        <td>台北市</td>
-                        <td>台北市</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                          </td>
+                          <td>
+                            <div class="date">2</div>
+                            <div class="period">
+                              <div class="available">
+                                <a
+                                  href="#"
+                                  data-fancybox=""
+                                  data-src="#popup2"
+                                  role="button"
+                                  aria-haspopup="dialog"
+                                  >上午：可報名（1/3）</a
+                                >
+                              </div>
+                              <div class="booked">下午：已額滿（3/3）</div>
+                              <div class="disable">晚上：未開放</div>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="date">3</div>
+                            <div class="period">
+                              <div class="available">
+                                <a
+                                  href="#"
+                                  data-fancybox=""
+                                  data-src="#popup1"
+                                  role="button"
+                                  aria-haspopup="dialog"
+                                  >上午：可報名（1/3）</a
+                                >
+                              </div>
+                              <div class="booked">下午：已額滿（3/3）</div>
+                              <div class="disable">晚上：未開放</div>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="date">4</div>
+                            <div class="period">
+                              <div class="available">
+                                <a
+                                  href="#"
+                                  data-fancybox=""
+                                  data-src="#popup1"
+                                  role="button"
+                                  aria-haspopup="dialog"
+                                  >上午：可報名（1/3）</a
+                                >
+                              </div>
+                              <div class="booked">下午：已額滿（3/3）</div>
+                              <div class="disable">晚上：未開放</div>
+                            </div>
+                          </td>
+                          <td class="grey">
+                            <div class="date">5</div>
+                            <div class="period">
+                              <div class="closed">休館日</div>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="date">6</div>
+                            <div class="period">
+                              <div class="available">
+                                <a
+                                  href="#"
+                                  data-fancybox=""
+                                  data-src="#popup1"
+                                  role="button"
+                                  aria-haspopup="dialog"
+                                  >上午：可報名（1/3）</a
+                                >
+                              </div>
+                              <div class="booked">下午：已額滿（3/3）</div>
+                              <div class="disable">晚上：未開放</div>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="date">7</div>
+                            <div class="period">
+                              <div class="available">
+                                <a
+                                  href="#"
+                                  data-fancybox=""
+                                  data-src="#popup1"
+                                  role="button"
+                                  aria-haspopup="dialog"
+                                  >上午：可報名（1/3）</a
+                                >
+                              </div>
+                              <div class="booked">下午：已額滿（3/3）</div>
+                              <div class="disable">晚上：未開放</div>
+                            </div>
+                          </td>
+                        </tr>
+                        <!-- week1 End -->
+                        <!-- week2 Start -->
+                        <tr>
+                          <td>
+                            <div class="date">8</div>
+                            <div class="period">
+                              <div class="available">
+                                <a
+                                  href="#"
+                                  data-fancybox=""
+                                  data-src="#popup1"
+                                  role="button"
+                                  aria-haspopup="dialog"
+                                  >上午：可報名（1/3）</a
+                                >
+                              </div>
+                              <div class="booked">下午：已額滿（3/3）</div>
+                              <div class="disable">晚上：未開放</div>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="date">9</div>
+                            <div class="period">
+                              <div class="available">
+                                <a
+                                  href="#"
+                                  data-fancybox=""
+                                  data-src="#popup1"
+                                  role="button"
+                                  aria-haspopup="dialog"
+                                  >上午：可報名（1/3）</a
+                                >
+                              </div>
+                              <div class="booked">下午：已額滿（3/3）</div>
+                              <div class="disable">晚上：未開放</div>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="date">10</div>
+                            <div class="period">
+                              <div class="available">
+                                <a
+                                  href="#"
+                                  data-fancybox=""
+                                  data-src="#popup1"
+                                  role="button"
+                                  aria-haspopup="dialog"
+                                  >上午：可報名（1/3）</a
+                                >
+                              </div>
+                              <div class="booked">下午：已額滿（3/3）</div>
+                              <div class="disable">晚上：未開放</div>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="date">11</div>
+                            <div class="period">
+                              <div class="available">
+                                <a
+                                  href="#"
+                                  data-fancybox=""
+                                  data-src="#popup1"
+                                  role="button"
+                                  aria-haspopup="dialog"
+                                  >上午：可報名（1/3）</a
+                                >
+                              </div>
+                              <div class="booked">下午：已額滿（3/3）</div>
+                              <div class="disable">晚上：未開放</div>
+                            </div>
+                          </td>
+                          <td class="grey">
+                            <div class="date">12</div>
+                            <div class="period">
+                              <div class="closed">休館日</div>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="date">13</div>
+                            <div class="period">
+                              <div class="available">
+                                <a
+                                  href="#"
+                                  data-fancybox=""
+                                  data-src="#popup1"
+                                  role="button"
+                                  aria-haspopup="dialog"
+                                  >上午：可報名（1/3）</a
+                                >
+                              </div>
+                              <div class="booked">下午：已額滿（3/3）</div>
+                              <div class="disable">晚上：未開放</div>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="date">14</div>
+                            <div class="period">
+                              <div class="available">
+                                <a
+                                  href="#"
+                                  data-fancybox=""
+                                  data-src="#popup1"
+                                  role="button"
+                                  aria-haspopup="dialog"
+                                  >上午：可報名（1/3）</a
+                                >
+                              </div>
+                              <div class="booked">下午：已額滿（3/3）</div>
+                              <div class="disable">晚上：未開放</div>
+                            </div>
+                          </td>
+                        </tr>
+                        <!-- week2 End -->
+                        <!-- week3 Start -->
+                        <tr>
+                          <td>
+                            <div class="date">15</div>
+                            <div class="period">
+                              <div class="available">
+                                <a
+                                  href="#"
+                                  data-fancybox=""
+                                  data-src="#popup1"
+                                  role="button"
+                                  aria-haspopup="dialog"
+                                  >上午：可報名（1/3）</a
+                                >
+                              </div>
+                              <div class="booked">下午：已額滿（3/3）</div>
+                              <div class="disable">晚上：未開放</div>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="date">16</div>
+                            <div class="period">
+                              <div class="available">
+                                <a
+                                  href="#"
+                                  data-fancybox=""
+                                  data-src="#popup1"
+                                  role="button"
+                                  aria-haspopup="dialog"
+                                  >上午：可報名（1/3）</a
+                                >
+                              </div>
+                              <div class="booked">下午：已額滿（3/3）</div>
+                              <div class="disable">晚上：未開放</div>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="date">17</div>
+                            <div class="period">
+                              <div class="available">
+                                <a
+                                  href="#"
+                                  data-fancybox=""
+                                  data-src="#popup1"
+                                  role="button"
+                                  aria-haspopup="dialog"
+                                  >上午：可報名（1/3）</a
+                                >
+                              </div>
+                              <div class="booked">下午：已額滿（3/3）</div>
+                              <div class="disable">晚上：未開放</div>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="date">18</div>
+                            <div class="period">
+                              <div class="available">
+                                <a
+                                  href="#"
+                                  data-fancybox=""
+                                  data-src="#popup1"
+                                  role="button"
+                                  aria-haspopup="dialog"
+                                  >上午：可報名（1/3）</a
+                                >
+                              </div>
+                              <div class="booked">下午：已額滿（3/3）</div>
+                              <div class="disable">晚上：未開放</div>
+                            </div>
+                          </td>
+                          <td class="grey">
+                            <div class="date">19</div>
+                            <div class="period">
+                              <div class="closed">休館日</div>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="date">20</div>
+                            <div class="period">
+                              <div class="available">
+                                <a
+                                  href="#"
+                                  data-fancybox=""
+                                  data-src="#popup1"
+                                  role="button"
+                                  aria-haspopup="dialog"
+                                  >上午：可報名（1/3）</a
+                                >
+                              </div>
+                              <div class="booked">下午：已額滿（3/3）</div>
+                              <div class="disable">晚上：未開放</div>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="date">21</div>
+                            <div class="period">
+                              <div class="available">
+                                <a
+                                  href="#"
+                                  data-fancybox=""
+                                  data-src="#popup1"
+                                  role="button"
+                                  aria-haspopup="dialog"
+                                  >上午：可報名（1/3）</a
+                                >
+                              </div>
+                              <div class="booked">下午：已額滿（3/3）</div>
+                              <div class="disable">晚上：未開放</div>
+                            </div>
+                          </td>
+                        </tr>
+                        <!-- week3 End -->
+                        <!-- week4 Start -->
+                        <tr>
+                          <td class="grey">
+                            <div class="date">22</div>
+                            <div class="period">
+                              <div class="disable">上午：未開放</div>
+                              <div class="disable">下午：未開放</div>
+                              <div class="disable">晚上：未開放</div>
+                            </div>
+                          </td>
+                          <td class="grey">
+                            <div class="date">23</div>
+                            <div class="period">
+                              <div class="disable">上午：未開放</div>
+                              <div class="disable">下午：未開放</div>
+                              <div class="disable">晚上：未開放</div>
+                            </div>
+                          </td>
+                          <td class="grey">
+                            <div class="date">24</div>
+                            <div class="period">
+                              <div class="disable">上午：未開放</div>
+                              <div class="disable">下午：未開放</div>
+                              <div class="disable">晚上：未開放</div>
+                            </div>
+                          </td>
+                          <td class="grey">
+                            <div class="date">25</div>
+                            <div class="period">
+                              <div class="disable">上午：未開放</div>
+                              <div class="disable">下午：未開放</div>
+                              <div class="disable">晚上：未開放</div>
+                            </div>
+                          </td>
+                          <td class="grey">
+                            <div class="date">26</div>
+                            <div class="period">
+                              <div class="closed">休館日</div>
+                            </div>
+                          </td>
+                          <td class="grey">
+                            <div class="date">27</div>
+                            <div class="period">
+                              <div class="disable">上午：未開放</div>
+                              <div class="disable">下午：未開放</div>
+                              <div class="disable">晚上：未開放</div>
+                            </div>
+                          </td>
+                          <td class="grey">
+                            <div class="date">28</div>
+                            <div class="period">
+                              <div class="disable">上午：未開放</div>
+                              <div class="disable">下午：未開放</div>
+                              <div class="disable">晚上：未開放</div>
+                            </div>
+                          </td>
+                        </tr>
+                        <!-- week4 End -->
+                        <!-- week5 Start -->
+                        <tr>
+                          <td>
+                            <div class="date">29</div>
+                            <div class="period">
+                              <div class="available">
+                                <a
+                                  href="#"
+                                  data-fancybox=""
+                                  data-src="#popup1"
+                                  role="button"
+                                  aria-haspopup="dialog"
+                                  >上午：可報名（1/3）</a
+                                >
+                              </div>
+                              <div class="booked">下午：已額滿（3/3）</div>
+                              <div class="disable">晚上：未開放</div>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="date">30</div>
+                            <div class="period">
+                              <div class="available">
+                                <a
+                                  href="#"
+                                  data-fancybox=""
+                                  data-src="#popup1"
+                                  role="button"
+                                  aria-haspopup="dialog"
+                                  >上午：可報名（1/3）</a
+                                >
+                              </div>
+                              <div class="booked">下午：已額滿（3/3）</div>
+                              <div class="disable">晚上：未開放</div>
+                            </div>
+                          </td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- tableScroll End -->
                 </div>
                 <!-- calendar End -->
-                <div id="popup1" class="popupB showPopup">
+                <!-- 學生公共服務報名 -->
+                <div id="popup1" class="popupB popupSignup">
                   <div class="popupBox">
-                    <div class="popTitle">標題</div>
+                    <div class="popTitle">學生公共服務報名</div>
                     <div class="popupContent">
-                      <p>
-                        Let Google help apps determine location. This means
-                        sending anonymous location data to Google, even when no
-                        apps are running.
-                      </p>
-                      <div class="tableList">
-                        <table>
-                          <thead>
-                            <tr>
-                              <th>編號</th>
-                              <th>標題</th>
-                              <th>日期</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td class="num">1</td>
-                              <td>通勤搭車看預報 環保集點10倍送</td>
-                              <td class="date">2025/01/01</td>
-                            </tr>
-                          </tbody>
-                        </table>
+                      <!-- 注意事項 -->
+                      <div class="signupNotice">
+                        <ul>
+                          <li>
+                            系統將發送『確認信』至您填寫的信箱，請收信後，於24小時內完成確認，才算報名成功。
+                          </li>
+                          <li>未完成確認者，名額將於 24小時後取消。</li>
+                          <li>
+                            公共服務證明書中將會帶入您的個人資料，請確保填寫的資訊正確。
+                          </li>
+                          <li>服務時數每次以2小時起跳</li>
+                        </ul>
                       </div>
-                      <p>
-                        <a href="#">連結文字</a
-                        >樣式大更沒於正時節直只們來壓算有先，求化化看雨的了元得前意要，性說用。以是一分，首字地旅紀親朋經有，在沒許、兒讓靈身不；候案司通資鄉下一支情西也哥際發你也是濟言通海後的健童頭各便。大更沒於正時節直只們來壓算有先，求化化看雨的了元得前意要，性說用。以是一分，首字地旅紀親朋經有，在沒許、兒讓靈身不；候案司通資鄉下一支情西也哥際發你也是濟言通海後的健童頭各便。
-                      </p>
-                      <p>
-                        <a href="#">連結文字</a
-                        >樣式大更沒於正時節直只們來壓算有先，求化化看雨的了元得前意要，性說用。以是一分，首字地旅紀親朋經有，在沒許、兒讓靈身不；候案司通資鄉下一支情西也哥際發你也是濟言通海後的健童頭各便。大更沒於正時節直只們來壓算有先，求化化看雨的了元得前意要，性說用。以是一分，首字地旅紀親朋經有，在沒許、兒讓靈身不；候案司通資鄉下一支情西也哥際發你也是濟言通海後的健童頭各便。
-                      </p>
+                      <!-- 填表 -->
+                      <div class="signupForm">
+                        <div class="notionInfo">
+                          註：<span>* </span>為必填欄位，不能為空白。
+                        </div>
+                        <form action="">
+                          <div class="formBox">
+                            <div class="gridBox">
+                              <!-- 預約日期 -->
+                              <div class="formList inline">
+                                <label
+                                  class="formListTitle"
+                                  for="reservationDate"
+                                  >預約日期</label
+                                >
+                                <div class="formContent">
+                                  <input
+                                    type="text"
+                                    name="username"
+                                    id="reservationDate"
+                                    placeholder="2025-06-30"
+                                    disabled
+                                  />
+                                </div>
+                              </div>
+                              <!-- 預約時間 -->
+                              <fieldset class="formList inline">
+                                <legend class="formListTitle">
+                                  <em aria-label="必填">*</em>預約時間
+                                </legend>
+                                <div class="formContent">
+                                  <div class="flexTpl_2">
+                                    <div class="col">
+                                      <div class="select">
+                                        <label for="timeStart" class="srOnly"
+                                          >起始時間</label
+                                        >
+                                        <select
+                                          name="timeStart"
+                                          id="timeStart"
+                                          required
+                                        >
+                                          <option value="">起始時間</option>
+                                          <option value="option">option</option>
+                                          <option value="option">option</option>
+                                        </select>
+                                      </div>
+                                    </div>
+                                    <div class="col">
+                                      <div class="select">
+                                        <label for="timeEnd" class="srOnly"
+                                          >結束時間</label
+                                        >
+                                        <select name="timeEnd" id="timeEnd">
+                                          <option value="">結束時間</option>
+                                          <option value="option">option</option>
+                                          <option value="option">option</option>
+                                        </select>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </fieldset>
+                              <!-- 學校名稱 -->
+                              <fieldset class="formList inline">
+                                <legend class="formListTitle">學校名稱</legend>
+                                <div class="formContent">
+                                  <div class="flexTpl_2">
+                                    <div class="col">
+                                      <label for="schoolName" class="srOnly"
+                                        >學校名稱</label
+                                      >
+                                      <input
+                                        type="text"
+                                        id="schoolName"
+                                        name="schoolName"
+                                        placeholder="如：XXX高級中學"
+                                      />
+                                    </div>
+                                    <div class="col">
+                                      <div class="select">
+                                        <label for="schoolGrade" class="srOnly"
+                                          >選擇等級</label
+                                        >
+                                        <select
+                                          name="schoolGrade"
+                                          id="schoolGrade"
+                                        >
+                                          <option value="">選擇等級</option>
+                                          <option value="option1">
+                                            option1
+                                          </option>
+                                          <option value="option2">
+                                            option2
+                                          </option>
+                                        </select>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </fieldset>
+                              <!-- 姓名 -->
+                              <div class="formList inline">
+                                <label class="formListTitle" for="userName"
+                                  ><em aria-label="必填">*</em>姓名</label
+                                >
+                                <div class="formContent">
+                                  <input
+                                    type="text"
+                                    name="userName"
+                                    id="userName"
+                                    autocomplete="username"
+                                    placeholder="如：王小明，僅能填寫一人"
+                                    required=""
+                                  />
+                                </div>
+                              </div>
+                              <!-- 聯絡電話 -->
+                              <div class="formList inline">
+                                <label class="formListTitle" for="userPhone"
+                                  ><em aria-label="必填">*</em>聯絡電話</label
+                                >
+                                <div class="formContent">
+                                  <input
+                                    type="text"
+                                    name="userPhone"
+                                    id="userPhone"
+                                    placeholder="如：如：0911234567 或 02-22334455"
+                                    required=""
+                                  />
+                                </div>
+                              </div>
+                              <!-- E-mail信箱 -->
+                              <div class="formList inline">
+                                <label class="formListTitle" for="formItem10"
+                                  ><em aria-label="必填">*</em>E-mail信箱</label
+                                >
+                                <div class="formContent">
+                                  <div class="inputBox">
+                                    <input
+                                      type="email"
+                                      name="email"
+                                      id="formItem10"
+                                      autocomplete="email"
+                                      placeholder="如：email@gmail.com"
+                                      aria-describedby="formItem10Alert"
+                                      required=""
+                                    />
+                                  </div>
+                                  <div role="alert" id="alert1">
+                                    <div class="formNotice">
+                                      <span>這是一般提醒訊息區塊</span>
+                                    </div>
+                                    <div class="formNoticeInfo">
+                                      <span>這是一般提醒訊息區塊</span>
+                                    </div>
+                                    <div class="formNoticeSuccess">
+                                      <span>您已成功登入</span>
+                                    </div>
+                                    <div class="formNoticeWarning">
+                                      <span>這似乎不是一個正常的Email格式</span>
+                                    </div>
+                                    <div class="formNoticeError">
+                                      <span>您輸入的帳號密碼有誤！</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- btn -->
+                              <div class="formBtnBox">
+                                <button type="reset" class="btnSecondary">
+                                  重設
+                                </button>
+                                <button type="submit" class="btnPrimary">
+                                  確認送出
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
                     </div>
-                    <div class="btnBox">
-                      <button class="cancel btnSecondary" type="button">
-                        取消
-                      </button>
-                      <button class="submit btnPrimary" type="submit">
-                        確認
-                      </button>
+                  </div>
+                </div>
+                <!-- 學生公共服務系統登入 -->
+                <div id="popup2" class="popupB popupLogin">
+                  <div class="popupBox">
+                    <div class="popTitle">學生公共服務系統登入</div>
+                    <div class="popupContent">
+                      <!-- 填表 -->
+                      <div class="loginForm">
+                        <div class="notionInfo">
+                          註：<span>* </span>為必填欄位，不能為空白。
+                        </div>
+                        <form action="">
+                          <div class="formBox">
+                            <div class="gridBox">
+                              <div class="formList inline">
+                                <label class="formListTitle" for="formItem1"
+                                  ><em aria-label="必填">*</em>帳號</label
+                                >
+                                <div class="formContent">
+                                  <input
+                                    type="text"
+                                    name="formItem1"
+                                    id="formItem1"
+                                    placeholder="請輸入借閱證號或身分證字號"
+                                  />
+                                </div>
+                              </div>
+                              <div class="formList inline">
+                                <label class="formListTitle" for="formItem9"
+                                  ><em aria-label="必填">*</em>密碼</label
+                                >
+                                <div class="formContent">
+                                  <div class="inputBox">
+                                    <input
+                                      type="password"
+                                      name="password"
+                                      id="formItem90"
+                                      placeholder="請輸入密碼"
+                                      required
+                                    />
+                                    <button
+                                      class="formEyes"
+                                      type="button"
+                                      data-show="顯示密碼"
+                                      data-hide="隱藏密碼"
+                                    ></button>
+                                  </div>
+                                  <div class="help">
+                                    <a href="#">忘記密碼</a>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="formList inline">
+                                <label class="formListTitle" for="code"
+                                  ><em aria-label="必填">*</em>驗證碼</label
+                                >
+                                <div class="formContent inline">
+                                  <img
+                                    src="images/basic/captcha.gif"
+                                    class="captcha"
+                                    alt="驗證碼圖片"
+                                    tabindex="0"
+                                  />
+                                  <button class="btnSecondary" type="button">
+                                    <i class="i_voice_w"></i>語音播放
+                                  </button>
+                                  <button class="btnSecondary" type="button">
+                                    <i class="i_refresh_w"></i>重新整理
+                                  </button>
+                                  <input
+                                    type="text"
+                                    name=""
+                                    id="code"
+                                    placeholder="請輸入驗證碼"
+                                  />
+                                </div>
+                              </div>
+                              <div class="loginNotice">
+                                <ul>
+                                  <li>帳號請輸入借閱證號或身分證字號</li>
+                                  <li>
+                                    密碼請輸帳號請輸入借閱證號或身分證字號
+                                  </li>
+                                  <li>
+                                    密碼請輸入自訂密碼(預設密碼：生日月日四碼)
+                                  </li>
+                                  <li>
+                                    若忘了密碼，請至<a
+                                      href="#"
+                                      target="_blank"
+                                      title="前往館藏查詢系統（開新視窗）"
+                                      >館藏查詢系統</a
+                                    >修改密碼
+                                  </li>
+                                  <li>
+                                    若連續登入失敗3次，將鎖定30分鐘無法登入
+                                  </li>
+                                  <li>
+                                    因應行政院資安政策規範，密碼強制要求修改為長度至少8碼，須含英文及數字之組合。若您使用預設密碼無法登入時，請至<a
+                                      href="#"
+                                      target="_blank"
+                                      title="前往館藏查詢系統（開新視窗）"
+                                      >館藏查詢系統</a
+                                    >，變更密碼。入自訂密碼(預設密碼：生日月日四碼)
+                                  </li>
+                                </ul>
+                              </div>
+                              <div class="formBtnBox">
+                                <button class="btnSecondary" type="button">
+                                  網路申辦
+                                </button>
+                                <button class="btnPrimary" type="submit">
+                                  會員登入
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
                     </div>
                   </div>
                 </div>

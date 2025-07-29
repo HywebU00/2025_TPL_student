@@ -121,13 +121,12 @@
               <nav class="breadcrumb" role="navigation" aria-label="麵包屑">
                 <ul>
                   <li><a href="#">首頁</a></li>
-                  <li><a href="#">節點</a></li>
-                  <li aria-current="page">節點</li>
+                  <li aria-current="page">預約管理</li>
                 </ul>
               </nav>
               <!-- breadcrumb Start -->
 
-              <h2 class="pageTitle">節點標題</h2>
+              <h2 class="pageTitle">預約管理</h2>
 
               <!-- 功能列 Start -->
               <div class="functionPanel">
@@ -142,96 +141,48 @@
               <!-- 功能列 End -->
 
               <div class="mainContent">
-                <!-- 內容 Start -->
-                <div>
-                  <h3>燈箱內容</h3>
-                  如果要一開始就要開啟燈箱請在內容區增加class 'showPopup'<br />
-                  <br />
-                  <!-- 燈箱內容 Start -->
-                  <button type="button" data-fancybox data-src="#popup">
-                    彈出對話框(大)
-                  </button>
-
-                  <button type="button" data-fancybox data-src="#popup2">
-                    彈出對話框(小)
-                  </button>
-                  <div id="popup" class="popupB showPopup">
-                    <div class="popupBox">
-                      <div class="popTitle">標題</div>
-                      <div class="popupContent">
-                        <p>
-                          Let Google help apps determine location. This means
-                          sending anonymous location data to Google, even when
-                          no apps are running.
-                        </p>
-                        <div class="tableList">
-                          <table>
-                            <thead>
-                              <tr>
-                                <th>編號</th>
-                                <th>標題</th>
-                                <th>日期</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td class="num">1</td>
-                                <td>通勤搭車看預報 環保集點10倍送</td>
-                                <td class="date">2025/01/01</td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                        <p>
-                          <a href="#">連結文字</a
-                          >樣式大更沒於正時節直只們來壓算有先，求化化看雨的了元得前意要，性說用。以是一分，首字地旅紀親朋經有，在沒許、兒讓靈身不；候案司通資鄉下一支情西也哥際發你也是濟言通海後的健童頭各便。大更沒於正時節直只們來壓算有先，求化化看雨的了元得前意要，性說用。以是一分，首字地旅紀親朋經有，在沒許、兒讓靈身不；候案司通資鄉下一支情西也哥際發你也是濟言通海後的健童頭各便。
-                        </p>
-                        <p>
-                          <a href="#">連結文字</a
-                          >樣式大更沒於正時節直只們來壓算有先，求化化看雨的了元得前意要，性說用。以是一分，首字地旅紀親朋經有，在沒許、兒讓靈身不；候案司通資鄉下一支情西也哥際發你也是濟言通海後的健童頭各便。大更沒於正時節直只們來壓算有先，求化化看雨的了元得前意要，性說用。以是一分，首字地旅紀親朋經有，在沒許、兒讓靈身不；候案司通資鄉下一支情西也哥際發你也是濟言通海後的健童頭各便。
-                        </p>
+                <!-- reservation Start -->
+                <div class="reservation">
+                  <!-- reservationBlock -->
+                  <div class="reservationBlock">
+                    <div class="reservationDate"><span>2025</span>07.30</div>
+                    <div class="reservationInfo">
+                      <div class="dept">
+                        臺北市立圖書館 C02總館3樓諮詢服務課
                       </div>
-                      <div class="btnBox">
-                        <button type="button" class="cancel btnSecondary">
-                          取消
-                        </button>
-                        <button type="button" class="submit btnPrimary">
-                          確認
-                        </button>
-                      </div>
+                      <div class="time">預約時間：09:00-14:00(共4小時)</div>
+                      <div class="status success">報名成功</div>
+                    </div>
+                    <div class="reservationFunction">
+                      <button type="button" class="btn">取消報名</button>
                     </div>
                   </div>
-
-                  <div id="popup2" class="popupS">
-                    <div class="popupBox">
-                      <div class="popTitle">標題</div>
-                      <div class="popupContent">
-                        Let Google help apps determine location. This means
-                        sending anonymous location data to Google, even when no
-                        apps are running.
-                      </div>
-                      <div class="btnBox">
-                        <button type="button" class="cancel btnSecondary">
-                          取消
-                        </button>
-                        <button type="button" class="submit btnPrimary">
-                          確認
-                        </button>
-                      </div>
+                  <!-- reservationBlock -->
+                  <div class="reservationBlock">
+                    <div class="reservationDate"><span>2025</span>07.01</div>
+                    <div class="reservationInfo">
+                      <div class="dept">臺北市立圖書館A11松山分館</div>
+                      <div class="time">預約時間：11:00-14:00(共2小時)</div>
+                      <div class="status fail">報名失敗-驗證逾期</div>
+                    </div>
+                    <div class="reservationFunction">
+                      <button type="button" class="btn">取消報名</button>
                     </div>
                   </div>
-                  <!-- 燈箱內容 End -->
+                  <!-- reservationBlock -->
+                  <div class="reservationBlock">
+                    <div class="reservationDate"><span>2025</span>06.30</div>
+                    <div class="reservationInfo">
+                      <div class="dept">臺北市立圖書館A11松山分館</div>
+                      <div class="time">預約時間：11:00-14:00(共2小時)</div>
+                      <div class="status cancel">報名取消</div>
+                    </div>
+                    <div class="reservationFunction">
+                      <button type="button" class="btn">取消報名</button>
+                    </div>
+                  </div>
                 </div>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Ducimus asperiores voluptatibus animi. Magnam atque quaerat
-                  eum asperiores. Sapiente pariatur quam vitae, a odio ut ea
-                  esse? Ea modi soluta mollitia! Lorem ipsum dolor sit amet
-                  consectetur adipisicing elit. Ducimus asperiores voluptatibus
-                  animi. Magnam atque quaerat eum asperiores. Sapiente pariatur
-                  quam vitae, a odio ut ea esse? Ea modi soluta mollitia!
-                </p>
-                <!-- 內容 End -->
+                <!-- reservation End -->
               </div>
             </section>
             <!-- 主內容區 End -->
@@ -292,7 +243,7 @@
     <!-- wrapper End -->
 
     <!-- 回到頂部 Start -->
-    <button type="button" id="scrollTop" aria-label="回到頂部">TOP</button>
+    <button id="scrollTop" type="button" aria-label="回到頂部">TOP</button>
     <!-- 回到頂部 End -->
 
     <!-- fancyBox -->
@@ -300,18 +251,8 @@
     <script src="vendor/fancybox/l10n/zh_TW.umd.js"></script>
     <!-- Swiper -->
     <script src="vendor/swiper/swiper-bundle.min.js"></script>
-
     <!-- js -->
     <script src="js/main.js"></script>
     <script src="js/customize.js"></script>
-
-    <script>
-      const closeBtn = document.querySelectorAll(".popupBox .btnBox button");
-      closeBtn.forEach((item) => {
-        item.addEventListener("click", (e) => {
-          Fancybox.close();
-        });
-      });
-    </script>
   </body>
 </html>

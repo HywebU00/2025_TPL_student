@@ -22,18 +22,18 @@
 @import "components/_sideNav"; //側方功能列
 @import "components/_breadcrumb"; //麵包屑
 @import "components/_functionPanel"; // 內頁功能
-@import "components/_tag"; // 分類
-@import "components/_share"; // 內頁功能
+// @import "components/_tag"; // 分類
+// @import "components/_share"; // 內頁功能
 @import "components/_pagination"; // 分頁
-@import "components/_search"; //搜尋
-@import "components/_language"; //搜尋
+// @import "components/_search"; //搜尋
+// @import "components/_language"; //搜尋
 @import "components/_fontsize"; //字體大小
 @import "components/_menu"; //選單
-@import "components/_fatFooter"; //選單
+// @import "components/_fatFooter"; //選單
 @import "components/_slider"; //swiper
-@import "components/_accordion"; // 手風琴
-@import "components/_tabs"; //tab
-@import "components/_floatNav"; // 漂浮按鈕
+// @import "components/_accordion"; // 手風琴
+// @import "components/_tabs"; //tab
+// @import "components/_floatNav"; // 漂浮按鈕
 @import "components/_download"; // 下載檔案
 @import "components/_marquee"; // 跑馬燈
 
@@ -42,9 +42,10 @@
 @import "template/_main"; //main
 @import "template/_footer"; //footer
 @import "views/_mp"; //首頁
-@import "views/_np"; //NP
+// @import "views/_np"; //NP
 @import "views/_lp"; //LP
-@import "views/_signup"; //CP
+@import "views/_signup"; //signup
+@import "views/_reservation"; //reservation
 @import "views/_cp"; //CP
 @import "views/_404"; //CP
 @import "views/_sitemap"; //sitemap

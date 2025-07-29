@@ -534,13 +534,11 @@
     all: unset;
     position: relative;
 
-    &.inline {
-      legend {
-        all: unset;
-        float: left;
-        width: var(--titleWidth);
-        transform: none;
-      }
+    legend {
+      all: unset;
+      float: left;
+      transform: none;
+      box-sizing: border-box;
     }
   }
 

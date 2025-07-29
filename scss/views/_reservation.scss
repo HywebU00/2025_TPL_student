@@ -1,0 +1,110 @@
+.reservation {
+  .reservationBlock {
+    padding: 40px 60px;
+    margin-bottom: 40px;
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 55px;
+    @include screen("tablet") {
+      padding: 30px;
+      margin-bottom: 20px;
+      gap: 40px;
+    }
+    @include screen("mobile") {
+      flex-direction: column;
+      gap: 20px;
+    }
+    @include screen("xsMobile") {
+      padding: 20px;
+    }
+    .reservationDate {
+      max-width: 120px;
+      color: #545454;
+      font-size: Rem(40);
+      line-height: 1.2;
+      text-align: center;
+      @include screen("mobile") {
+        font-size: Rem(28);
+        max-width: none;
+        font-weight: bold;
+      }
+      span {
+        display: block;
+        font-size: Rem(48);
+        border-bottom: 1px solid #545454;
+        @include screen("mobile") {
+          display: inline-block;
+          font-size: Rem(28);
+          border-bottom: 0;
+          &::after {
+            content: ".";
+          }
+        }
+      }
+    }
+    .reservationInfo {
+      flex-grow: 1;
+      color: #1a1a1a;
+      @include screen("mobile") {
+        text-align: center;
+      }
+      .dept {
+        font-size: Rem(24);
+        font-weight: bold;
+        line-height: 1.2;
+        @include screen("tablet") {
+          font-size: Rem(20);
+        }
+      }
+      .time {
+        font-size: Rem(18);
+        margin-bottom: 4px;
+        @include screen("tablet") {
+          font-size: Rem(16);
+        }
+      }
+      .status {
+        padding: 6px 20px;
+        border-radius: 30px;
+        display: inline-block;
+        font-weight: 500;
+        @include screen("tablet") {
+          padding: 4px 16px;
+        }
+        &.success {
+          border: 2px solid #2f476b;
+          color: #2f476b;
+        }
+        &.fail {
+          border: 2px solid #c84332;
+          color: #c84332;
+        }
+        &.cancel {
+          border: 2px solid #666;
+          color: #666;
+        }
+      }
+    }
+    .reservationFunction {
+      .btn {
+        font-size: Rem(18);
+        padding: 12px 0;
+        min-width: 190px;
+        background: #737373;
+        color: #fff;
+        @include screen("tablet") {
+          min-width: 150px;
+        }
+        &:hover,
+        &:focus-visible {
+          background: #000;
+          color: #fff;
+        }
+      }
+    }
+  }
+}

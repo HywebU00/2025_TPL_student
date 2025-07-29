@@ -32,6 +32,9 @@ main {
     height: 142px;
     background: url("../images/triangle1.png") no-repeat 0 0;
     display: block;
+    @include screen("mobile") {
+      display: none;
+    }
   }
   &::after {
     content: "";
@@ -42,6 +45,9 @@ main {
     height: 221px;
     background: url("../images/triangle2.png") no-repeat 0 0;
     display: block;
+    @include screen("mobile") {
+      display: none;
+    }
   }
   &.innerPage {
     padding-top: 30px;

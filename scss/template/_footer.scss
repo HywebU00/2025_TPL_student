@@ -87,5 +87,10 @@ footer {
     @include screen("tablet") {
       justify-content: center;
     }
+    a {
+      img {
+        display: block;
+      }
+    }
   }
 }
