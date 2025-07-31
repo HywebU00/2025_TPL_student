@@ -17,7 +17,7 @@
     }
 
     &:focus-visible {
-      outline: #e50012 2px solid;
+      outline: #ff3d9b 2px solid;
       outline-offset: 1px;
       box-shadow: none;
     }
@@ -191,6 +191,7 @@
     }
   }
   .loginNotice {
+    color: #1a1a1a;
   }
   .formBox .gridBox {
     border-top: 0;

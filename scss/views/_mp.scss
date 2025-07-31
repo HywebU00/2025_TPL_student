@@ -180,6 +180,7 @@
     a {
       color: #000;
       text-decoration: none;
+      display: block;
     }
     .swiperArrow {
       width: 80px;
@@ -238,6 +239,7 @@
   }
   .noticeDate {
     text-align: right;
+    font-size: Rem(18);
   }
 }
 // 立即登入

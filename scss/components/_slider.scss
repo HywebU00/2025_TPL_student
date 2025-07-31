@@ -176,38 +176,39 @@ button.autoPlaySwitch {
   }
   .swiper {
     margin-top: 0;
-    clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 88.66%, 20% 0%);
-    position: relative;
-    &::before {
-      content: "";
-      position: absolute;
-      bottom: 9%;
-      left: -2px;
-      width: 11.5%;
-      height: 29%;
-      background: url("../images/leftTriangle.svg") no-repeat center center;
-      z-index: 99;
-      @include screen("xsMobile") {
-        bottom: 6%;
-        width: 20%;
-        left: -18px;
-      }
-    }
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 16%;
-      height: 100%;
-      background: url("../images/rightTriangle.svg") no-repeat center bottom;
-      z-index: 99;
-    }
+
     a {
       display: block;
       position: relative;
       .pic {
         aspect-ratio: 1920 / 627;
+        clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 88.66%, 20% 0%);
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: 9%;
+          left: -2px;
+          width: 11.5%;
+          height: 29%;
+          background: url("../images/leftTriangle.svg") no-repeat center center;
+          z-index: 99;
+          @include screen("xsMobile") {
+            bottom: 6%;
+            width: 20%;
+            left: -18px;
+          }
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 16%;
+          height: 100%;
+          background: url("../images/rightTriangle.svg") no-repeat center bottom;
+          z-index: 99;
+        }
         @include screen("xsMobile") {
           height: 200px;
           aspect-ratio: auto;
