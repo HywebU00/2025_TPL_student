@@ -7435,41 +7435,43 @@ footer .footerIcon a img {
 .calendar table th span {
   display: block;
   background: #ffdb01;
+  color: #000;
   padding: 8px;
   font-size: 1.25rem;
-  color: #000;
   border-radius: 30px;
 }
 .calendar table td {
-  padding: 12px 12px;
+  padding: 10px;
   vertical-align: top;
-  border: 0;
-  background: #efefef;
-  border-radius: 30px;
+  border: 3px solid #9dacd5;
+  background: #fff;
+  border-radius: 26px;
 }
 .calendar table td .date {
   font-size: 1.5rem;
   line-height: 1.2;
   font-weight: bold;
-  color: #c84332;
-  margin-left: 6px;
+  color: #1a1a1a;
+  padding: 0 3px;
+  margin-left: 3px;
+  margin-bottom: 10px;
+  display: inline-block;
+  border-bottom: 3px solid #ffdb01;
+  border-radius: 1px;
 }
 .calendar table td .period > div {
   white-space: nowrap;
   font-weight: 500;
-  padding: 2px 6px;
+  padding: 2px 8px;
   border-radius: 30px;
   font-size: 0.9375rem;
 }
-.calendar table td .period > div.available {
-  background: #ffdcd7;
-}
 .calendar table td .period > div.available a {
-  color: #c84332;
+  color: #276d62;
   display: block;
 }
 .calendar table td .period > div.available:hover, .calendar table td .period > div.available:focus-visible {
-  background: #c84332;
+  background: #276d62;
 }
 .calendar table td .period > div.available:hover a, .calendar table td .period > div.available:focus-visible a {
   color: #fff;
@@ -7488,6 +7490,9 @@ footer .footerIcon a img {
 }
 .calendar table td.grey {
   background: #ccc;
+}
+.calendar table td.grey .date {
+  border-bottom: 3px solid #fff;
 }
 .calendar table td.grey .period > div {
   color: #1a1a1a;

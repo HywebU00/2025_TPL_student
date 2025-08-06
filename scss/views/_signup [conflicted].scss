@@ -172,10 +172,13 @@
     background: transparent;
     border-collapse: separate;
     border-spacing: 5px;
-    width: calc(100% - 30px);
+    width: calc(100% - 50px);
+    padding: 10px;
+    background: #ffbf01;
+    border-radius: 30px;
     th,
     td {
-      width: 165px;
+      width: 162px;
     }
     th {
       background: transparent;
@@ -184,46 +187,45 @@
       position: relative;
       span {
         display: block;
-        background: #ffdb01;
-        color: #000;
+        background: #027e92;
         padding: 8px;
         font-size: Rem(20);
+        color: #fff;
         border-radius: 30px;
       }
     }
     td {
-      padding: 10px;
+      padding: 12px 12px;
       vertical-align: top;
-      border: 3px solid #9dacd5;
+      // border-left: #525252 1px solid;
+      // border-right: #525252 1px solid;
+      // border-bottom: #525252 1px solid;
+      border: 0;
       background: #fff;
-      border-radius: 26px;
+      border-radius: 20px;
       .date {
         font-size: Rem(24);
         line-height: 1.2;
         font-weight: bold;
-        color: #1a1a1a;
-        padding: 0 3px;
-        margin-left: 3px;
-        margin-bottom: 10px;
-        display: inline-block;
-        border-bottom: 3px solid #ffdb01;
-        border-radius: 1px;
+        color: #c84332;
+        margin-left: 6px;
       }
       .period {
         > div {
           white-space: nowrap;
           font-weight: 500;
-          padding: 2px 8px;
+          padding: 2px 6px;
           border-radius: 30px;
-          font-size: Rem(15);
+          font-size: Rem(14);
           &.available {
+            background: #ffdcd7;
             a {
-              color: #276d62;
+              color: #c84332;
               display: block;
             }
             &:hover,
             &:focus-visible {
-              background: #276d62;
+              background: #c84332;
               a {
                 color: #fff;
               }
@@ -244,10 +246,7 @@
         }
       }
       &.grey {
-        background: #ccc;
-        .date {
-          border-bottom: 3px solid #fff;
-        }
+        background: #d5d5d5;
         .period {
           > div {
             color: #1a1a1a;
