@@ -7461,10 +7461,10 @@ footer .footerIcon a img {
 }
 .calendar table td .period > div {
   white-space: nowrap;
-  font-weight: 500;
   padding: 2px 8px;
   border-radius: 30px;
   font-size: 0.9375rem;
+  font-weight: bold;
 }
 .calendar table td .period > div.available a {
   color: #276d62;

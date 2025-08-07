@@ -212,10 +212,10 @@
       .period {
         > div {
           white-space: nowrap;
-          font-weight: 500;
           padding: 2px 8px;
           border-radius: 30px;
           font-size: Rem(15);
+          font-weight: bold;
           &.available {
             a {
               color: #276d62;
