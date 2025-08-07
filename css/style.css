@@ -7439,6 +7439,7 @@ footer .footerIcon a img {
   padding: 8px;
   font-size: 1.25rem;
   border-radius: 30px;
+  font-weight: bold;
 }
 .calendar table td {
   padding: 10px;
