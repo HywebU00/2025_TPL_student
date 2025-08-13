@@ -2,7 +2,7 @@
 @import "../vendor/swiper/swiper-bundle.min.css";
 @import "../vendor/fancybox/fancybox.css";
 :root {
-  --RWDWidth: 991px;
+  --RWDWidth: 1070px;
   --sideFixTop: 80px;
   --borderRadius: 8px;
   --borderRadius2: 4px;
@@ -661,7 +661,7 @@ body .mainContent.largeSize {
           flex-direction: column;
   min-height: 100vh;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .wrapper {
     padding-top: 60px;
   }
@@ -803,7 +803,7 @@ h6 + p {
   background: rgba(0, 0, 0, 0.8);
   cursor: pointer;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .overlay {
     top: 60px;
     height: calc(100vh - 60px);
@@ -887,7 +887,7 @@ nav ul {
   transition: all 0.3s ease;
   opacity: 0;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   #scrollTop {
     width: 40px;
     height: 40px;
@@ -1065,7 +1065,7 @@ nav ul {
       -ms-flex: 1 1 calc((100% - 24px * 11) / 12 * 9 + 24px * (9 - 1));
           flex: 1 1 calc((100% - 24px * 11) / 12 * 9 + 24px * (9 - 1));
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .flexTpl_9_3 .col:nth-child(1) {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 calc((100% - 24px * 11) / 12 * 8 + 24px * (8 - 1));
@@ -1077,7 +1077,7 @@ nav ul {
       -ms-flex: 1 1 calc((100% - 24px * 11) / 12 * 3 + 24px * (3 - 1));
           flex: 1 1 calc((100% - 24px * 11) / 12 * 3 + 24px * (3 - 1));
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .flexTpl_9_3 .col:nth-child(2) {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 calc((100% - 24px * 11) / 12 * 4 + 24px * (4 - 1));
@@ -1090,7 +1090,7 @@ nav ul {
       -ms-flex: 1 1 calc((100% - 24px * 11) / 12 * 3 + 24px * (3 - 1));
           flex: 1 1 calc((100% - 24px * 11) / 12 * 3 + 24px * (3 - 1));
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .flexTpl_3_9 .col:nth-child(1) {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 calc((100% - 24px * 11) / 12 * 4 + 24px * (4 - 1));
@@ -1102,7 +1102,7 @@ nav ul {
       -ms-flex: 1 1 calc((100% - 24px * 11) / 12 * 9 + 24px * (9 - 1));
           flex: 1 1 calc((100% - 24px * 11) / 12 * 9 + 24px * (9 - 1));
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .flexTpl_3_9 .col:nth-child(2) {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 calc((100% - 24px * 11) / 12 * 8 + 24px * (8 - 1));
@@ -1115,7 +1115,7 @@ nav ul {
       -ms-flex: 1 1 calc((100% - 24px * 11) / 12 * 3 + 24px * (3 - 1));
           flex: 1 1 calc((100% - 24px * 11) / 12 * 3 + 24px * (3 - 1));
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .flexTpl_3_6_3 .col:nth-child(1) {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 calc((100% - 24px * 11) / 12 * 6 + 24px * (6 - 1));
@@ -1127,7 +1127,7 @@ nav ul {
       -ms-flex: 1 1 calc((100% - 24px * 11) / 12 * 6 + 24px * (6 - 1));
           flex: 1 1 calc((100% - 24px * 11) / 12 * 6 + 24px * (6 - 1));
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .flexTpl_3_6_3 .col:nth-child(2) {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 100%;
@@ -1139,7 +1139,7 @@ nav ul {
       -ms-flex: 1 1 calc((100% - 24px * 11) / 12 * 3 + 24px * (3 - 1));
           flex: 1 1 calc((100% - 24px * 11) / 12 * 3 + 24px * (3 - 1));
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .flexTpl_3_6_3 .col:nth-child(3) {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 calc((100% - 24px * 11) / 12 * 6 + 24px * (6 - 1));
@@ -1152,7 +1152,7 @@ nav ul {
       -ms-flex: 1 1 calc((100% - 24px * 11) / 12 * 3 + 24px * (3 - 1));
           flex: 1 1 calc((100% - 24px * 11) / 12 * 3 + 24px * (3 - 1));
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .flexTpl_3_3_6 .col:nth-child(1) {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 calc((100% - 24px * 11) / 12 * 6 + 24px * (6 - 1));
@@ -1164,7 +1164,7 @@ nav ul {
       -ms-flex: 1 1 calc((100% - 24px * 11) / 12 * 3 + 24px * (3 - 1));
           flex: 1 1 calc((100% - 24px * 11) / 12 * 3 + 24px * (3 - 1));
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .flexTpl_3_3_6 .col:nth-child(2) {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 calc((100% - 24px * 11) / 12 * 6 + 24px * (6 - 1));
@@ -1176,7 +1176,7 @@ nav ul {
       -ms-flex: 1 1 calc((100% - 24px * 11) / 12 * 6 + 24px * (6 - 1));
           flex: 1 1 calc((100% - 24px * 11) / 12 * 6 + 24px * (6 - 1));
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .flexTpl_3_3_6 .col:nth-child(3) {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 100%;
@@ -1189,7 +1189,7 @@ nav ul {
       -ms-flex: 1 1 calc((100% - 24px * 11) / 12 * 6 + 24px * (6 - 1));
           flex: 1 1 calc((100% - 24px * 11) / 12 * 6 + 24px * (6 - 1));
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .flexTpl_6_3_3 .col:nth-child(1) {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 100%;
@@ -1201,7 +1201,7 @@ nav ul {
       -ms-flex: 1 1 calc((100% - 24px * 11) / 12 * 3 + 24px * (3 - 1));
           flex: 1 1 calc((100% - 24px * 11) / 12 * 3 + 24px * (3 - 1));
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .flexTpl_6_3_3 .col:nth-child(2) {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 calc((100% - 24px * 11) / 12 * 6 + 24px * (6 - 1));
@@ -1213,7 +1213,7 @@ nav ul {
       -ms-flex: 1 1 calc((100% - 24px * 11) / 12 * 3 + 24px * (3 - 1));
           flex: 1 1 calc((100% - 24px * 11) / 12 * 3 + 24px * (3 - 1));
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .flexTpl_6_3_3 .col:nth-child(3) {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 calc((100% - 24px * 11) / 12 * 6 + 24px * (6 - 1));
@@ -1235,7 +1235,7 @@ nav ul {
             flex: 1 1 calc((100% - 24px * 11) / 12 * 3 + 24px * (3 - 1));
   }
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .flexTpl_2_2_8 .col:nth-child(1) {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 calc((100% - 24px * 11) / 12 * 6 + 24px * (6 - 1));
@@ -1256,7 +1256,7 @@ nav ul {
             flex: 1 1 calc((100% - 24px * 11) / 12 * 3 + 24px * (3 - 1));
   }
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .flexTpl_2_2_8 .col:nth-child(2) {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 calc((100% - 24px * 11) / 12 * 6 + 24px * (6 - 1));
@@ -1275,7 +1275,7 @@ nav ul {
             flex: 1 1 calc((100% - 24px * 11) / 12 * 6 + 24px * (6 - 1));
   }
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .flexTpl_2_2_8 .col:nth-child(3) {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 100%;
@@ -1310,7 +1310,7 @@ nav ul {
 .flexTpl_3 .col {
   width: calc((100% - 24px * (3 - 1)) / 3);
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .flexTpl_3 .col {
     width: 100%;
   }
@@ -1319,7 +1319,7 @@ nav ul {
 .flexTpl_4 .col {
   width: calc((100% - 24px * (4 - 1)) / 4);
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .flexTpl_4 .col {
     width: calc((100% - 24px * (2 - 1)) / 2);
   }
@@ -1328,7 +1328,7 @@ nav ul {
 .flexTpl_5 .col {
   width: calc((100% - 24px * (5 - 1)) / 5);
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .flexTpl_5 .col {
     width: calc((100% - 24px * (3 - 1)) / 3);
   }
@@ -1342,7 +1342,7 @@ nav ul {
     width: calc((100% - 24px * (4 - 1)) / 4);
   }
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .flexTpl_6 .col {
     width: calc((100% - 24px * (3 - 1)) / 3);
   }
@@ -2096,7 +2096,7 @@ button[disabled] i {
   opacity: 0.5;
 }
 button.active, button:hover {
-  background: #c8cacc;
+  background: rgb(199.8, 201.6, 204.3);
 }
 
 .btnPrimary {
@@ -2134,7 +2134,7 @@ button.active, button:hover {
 }
 .btnPrimary.bd:hover {
   color: #2f476b;
-  background: #eaedf0;
+  background: rgb(234.2, 236.6, 240.2);
 }
 .btnPrimary.nbd {
   color: #2f476b;
@@ -2143,7 +2143,7 @@ button.active, button:hover {
 }
 .btnPrimary.nbd:hover {
   color: #2f476b;
-  background: #eaedf0;
+  background: rgb(234.2, 236.6, 240.2);
 }
 .btnPrimary.active, .btnPrimary:hover {
   color: #000;
@@ -2185,7 +2185,7 @@ button.active, button:hover {
 }
 .btnSecondary.bd:hover {
   color: #666;
-  background: #f0f0f0;
+  background: rgb(239.7, 239.7, 239.7);
 }
 .btnSecondary.nbd {
   color: #666;
@@ -2194,7 +2194,7 @@ button.active, button:hover {
 }
 .btnSecondary.nbd:hover {
   color: #666;
-  background: #f0f0f0;
+  background: rgb(239.7, 239.7, 239.7);
 }
 .btnSecondary.active, .btnSecondary:hover {
   color: #fff;
@@ -2247,7 +2247,7 @@ button.active, button:hover {
 }
 .btnNormal.active, .btnNormal:hover {
   color: #1a1a1a;
-  background: #c8cacc;
+  background: rgb(199.8, 201.6, 204.3);
 }
 
 .bp {
@@ -3371,7 +3371,7 @@ thead + tbody th {
   min-width: 797px;
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .tableList table thead,
   .tableList table tbody,
   .tableList table th,
@@ -3388,12 +3388,12 @@ thead + tbody th {
     border: #ddd 1px solid;
   }
 }
-@media screen and (max-width: 991px) and (max-width: 991px) {
+@media screen and (max-width: 1070px) and (max-width: 1070px) {
   .tableList table tr {
     border-color: #97a3b6;
   }
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .tableList table td {
     border: none;
     position: relative;
@@ -3404,7 +3404,7 @@ thead + tbody th {
     border-bottom: 1px solid #eee;
   }
 }
-@media screen and (max-width: 991px) and (max-width: 991px) {
+@media screen and (max-width: 1070px) and (max-width: 1070px) {
   .tableList table td {
     border-color: #dee0e3;
   }
@@ -3412,7 +3412,7 @@ thead + tbody th {
     border: none;
   }
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .tableList table td:before {
     display: none;
   }
@@ -3450,7 +3450,7 @@ header .topNav {
   z-index: 60;
   width: auto;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   header .topNav {
     display: none;
   }
@@ -3484,6 +3484,20 @@ header .topNav {
   .topNav .member {
     margin-right: 0;
   }
+}
+.topNav .member button.logoutBtn {
+  background: transparent;
+  text-decoration: underline;
+  font-weight: bold;
+  border-radius: 0;
+}
+@media screen and (max-width: 1180px) {
+  .topNav .member button.logoutBtn {
+    color: #fff;
+  }
+}
+.topNav .member button.logoutBtn:hover {
+  text-decoration: none;
 }
 .topNav .navList {
   display: -webkit-box;
@@ -3655,7 +3669,7 @@ button[disabled] i {
   opacity: 0.5;
 }
 button.active, button:hover {
-  background: #c8cacc;
+  background: rgb(199.8, 201.6, 204.3);
 }
 
 .btnPrimary {
@@ -3693,7 +3707,7 @@ button.active, button:hover {
 }
 .btnPrimary.bd:hover {
   color: #2f476b;
-  background: #eaedf0;
+  background: rgb(234.2, 236.6, 240.2);
 }
 .btnPrimary.nbd {
   color: #2f476b;
@@ -3702,7 +3716,7 @@ button.active, button:hover {
 }
 .btnPrimary.nbd:hover {
   color: #2f476b;
-  background: #eaedf0;
+  background: rgb(234.2, 236.6, 240.2);
 }
 .btnPrimary.active, .btnPrimary:hover {
   color: #000;
@@ -3744,7 +3758,7 @@ button.active, button:hover {
 }
 .btnSecondary.bd:hover {
   color: #666;
-  background: #f0f0f0;
+  background: rgb(239.7, 239.7, 239.7);
 }
 .btnSecondary.nbd {
   color: #666;
@@ -3753,7 +3767,7 @@ button.active, button:hover {
 }
 .btnSecondary.nbd:hover {
   color: #666;
-  background: #f0f0f0;
+  background: rgb(239.7, 239.7, 239.7);
 }
 .btnSecondary.active, .btnSecondary:hover {
   color: #fff;
@@ -3806,7 +3820,7 @@ button.active, button:hover {
 }
 .btnNormal.active, .btnNormal:hover {
   color: #1a1a1a;
-  background: #c8cacc;
+  background: rgb(199.8, 201.6, 204.3);
 }
 
 .bp {
@@ -4159,7 +4173,7 @@ button.active, button:hover {
 .sideNav #sideMenu .sideMenuContent .sideNavBox > ul a {
   text-decoration: none;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .sideNav.typeA {
     position: fixed;
     z-index: 50;
@@ -4182,7 +4196,7 @@ button.active, button:hover {
     height: 100%;
   }
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .sideNav.typeB {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -4316,7 +4330,7 @@ button.active, button:hover {
   transition: all 0.3s ease;
   overflow: hidden;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .fontSizeInner button,
   .functionPanelBtn {
     width: 42px;
@@ -4361,12 +4375,12 @@ button.active, button:hover {
       -ms-flex-align: center;
           align-items: center;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .fontSizeInner {
     display: none;
   }
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .fontSizeInner span {
     font-size: 0.8125rem;
   }
@@ -4772,7 +4786,7 @@ button.active, button:hover {
   background: none;
   border: none;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   #mobileMainMenuBtn {
     display: block;
   }
@@ -5187,7 +5201,7 @@ button.active, button:hover {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   #mobileMenu .topNav .language ul {
     position: relative;
     top: auto;
@@ -5205,7 +5219,7 @@ button.active, button:hover {
   width: 100%;
   position: relative;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .menu {
     display: none;
   }
@@ -5403,7 +5417,7 @@ button.active, button:hover {
 .megaMenu > ul > li > ul > li {
   width: 20%;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .megaMenu > ul > li > ul > li {
     width: 100%;
   }
@@ -5587,7 +5601,7 @@ button.autoPlaySwitch:hover {
   margin-bottom: 32px;
   position: relative;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .mpSlider {
     margin-bottom: 0;
   }
@@ -5615,8 +5629,7 @@ button.autoPlaySwitch:hover {
 }
 .mpSlider .swiper a .pic {
   aspect-ratio: 1920/627;
-  -webkit-clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 88.66%, 20% 0%);
-          clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 88.66%, 20% 0%);
+  clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 88.66%, 20% 0%);
   position: relative;
 }
 .mpSlider .swiper a .pic::before {
@@ -5748,7 +5761,7 @@ button.autoPlaySwitch:hover {
 .cpSlider .swiperBox {
   padding: 0px 70px;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .cpSlider .swiperBox {
     padding: 10px 40px;
   }
@@ -5931,7 +5944,7 @@ button.autoPlaySwitch:hover {
 .linkSlider .swiperBox {
   padding: 30px 70px;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .linkSlider .swiperBox {
     padding: 10px 40px;
   }
@@ -6039,8 +6052,7 @@ button.autoPlaySwitch:hover {
   position: absolute;
   inset: 0;
   background-color: #D9D9D9;
-  -webkit-clip-path: polygon(0% 5px, 1px 2.5px, 2.5px 1px, 5px 0%, calc(100% - 10px) 0%, 100% 10px, 100% calc(100% - 5px), calc(100% - 1px) calc(100% - 2.5px), calc(100% - 2px) calc(100% - 1px), calc(100% - 5px) 100%, 5px 100%, 2.5px calc(100% - 1px), 1px calc(100% - 2px), 0% calc(100% - 5px));
-          clip-path: polygon(0% 5px, 1px 2.5px, 2.5px 1px, 5px 0%, calc(100% - 10px) 0%, 100% 10px, 100% calc(100% - 5px), calc(100% - 1px) calc(100% - 2.5px), calc(100% - 2px) calc(100% - 1px), calc(100% - 5px) 100%, 5px 100%, 2.5px calc(100% - 1px), 1px calc(100% - 2px), 0% calc(100% - 5px));
+  clip-path: polygon(0% 5px, 1px 2.5px, 2.5px 1px, 5px 0%, calc(100% - 10px) 0%, 100% 10px, 100% calc(100% - 5px), calc(100% - 1px) calc(100% - 2.5px), calc(100% - 2px) calc(100% - 1px), calc(100% - 5px) 100%, 5px 100%, 2.5px calc(100% - 1px), 1px calc(100% - 2px), 0% calc(100% - 5px));
 }
 .fileDownloadBox .downloadFiles a::after {
   content: "";
@@ -6284,7 +6296,7 @@ header {
   position: relative;
   z-index: 55;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   header {
     position: fixed;
     top: 0;
@@ -6297,7 +6309,7 @@ header .headTop {
   padding-top: 26px;
   padding-bottom: 20px;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   header .headTop {
     padding: 0 60px;
   }
@@ -6333,7 +6345,7 @@ header .container {
       -ms-flex-align: center;
           align-items: center;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   header .container {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -6343,7 +6355,7 @@ header .container {
 header h1 {
   margin: 0;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   header h1 {
     width: 100%;
   }
@@ -6356,7 +6368,7 @@ header h1 a {
   font-size: 0;
   display: block;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   header h1 a {
     width: 100%;
     height: 60px;
@@ -6382,7 +6394,7 @@ header h1 a {
   min-height: 100vh;
   background: url("../images/bg.png") repeat center center fixed;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .wrapper {
     padding-top: 60px;
   }
@@ -6437,7 +6449,7 @@ main.innerPage {
   padding-bottom: 60px;
   background: url("../images/bottomShape.svg") no-repeat left bottom -300px;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   main.innerPage {
     background: url("../images/bottomShape.svg") no-repeat left bottom;
   }
@@ -6455,7 +6467,7 @@ main .hasSide .container {
           justify-content: space-between;
   gap: 40px;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   main .hasSide .container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -6470,7 +6482,7 @@ main .hasSide .mainContentBox {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   main .hasSide .mainContentBox {
     width: 100%;
   }
@@ -6537,7 +6549,7 @@ footer .footerBox {
   margin: 0 auto;
   padding: 60px 0;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   footer .footerBox {
     padding: 30px 0;
   }
@@ -6551,7 +6563,7 @@ footer .footerBox .container {
           justify-content: space-between;
   gap: 20px;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   footer .footerBox .container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -6582,7 +6594,7 @@ footer .footerLink {
   padding: 0;
   list-style: none;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   footer .footerLink li {
     text-align: center;
   }
@@ -6593,7 +6605,7 @@ footer .footerLink li:after {
   padding-left: 20px;
   margin-right: 20px;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   footer .footerLink li:after {
     display: none;
   }
@@ -6608,7 +6620,7 @@ footer .footerLink li a {
 footer .footerLink li a:hover {
   color: #ffdb01;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   footer .footerLink li {
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
@@ -6628,12 +6640,12 @@ footer .footerInfo {
   padding: 0;
   list-style: none;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   footer .footerInfo {
     text-align: center;
   }
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   footer .footerInfo2 {
     text-align: center;
   }
@@ -6647,7 +6659,7 @@ footer .footerIcon {
       -ms-flex-pack: end;
           justify-content: flex-end;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   footer .footerIcon {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -6696,7 +6708,7 @@ footer .footerIcon a img {
   margin: 0 auto;
   padding: 96px 0 160px;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .menuBlock {
     padding: 60px 0;
   }
@@ -6734,7 +6746,7 @@ footer .footerIcon a img {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .menuBlock a {
     width: 180px;
     padding: 30px;
@@ -6771,7 +6783,7 @@ footer .footerIcon a img {
           justify-content: center;
   text-align: center;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .menuBlock a .title {
     font-size: 1.125rem;
   }
@@ -6828,7 +6840,7 @@ footer .footerIcon a img {
   max-width: 1200px;
   margin: 0 auto;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .mainBox:has(.noticeSlider) .container .flexTpl_2 {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -6845,7 +6857,7 @@ footer .footerIcon a img {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .mainBox:has(.noticeSlider) .container .flexTpl_2 .col {
     width: 100%;
   }
@@ -6865,7 +6877,7 @@ footer .footerIcon a img {
   display: -ms-flexbox;
   display: flex;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .noticeSlider {
     padding: 30px;
   }
@@ -6875,7 +6887,7 @@ footer .footerIcon a img {
   margin: 0;
   background: rgba(255, 255, 255, 0.9);
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .noticeSlider .swiperBox {
     padding: 30px 40px;
   }
@@ -6891,7 +6903,7 @@ footer .footerIcon a img {
   background: rgba(255, 219, 1, 0.6);
   border-radius: 50%;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .noticeSlider .swiperBox .swiperArrow {
     width: 60px;
     height: 60px;
@@ -6915,7 +6927,7 @@ footer .footerIcon a img {
 .noticeSlider .swiperBox .swiperArrow.swiperNext {
   right: -40px;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .noticeSlider .swiperBox .swiperArrow.swiperNext {
     right: -24px;
   }
@@ -6923,7 +6935,7 @@ footer .footerIcon a img {
 .noticeSlider .swiperBox .swiperArrow.swiperPrev {
   left: -40px;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .noticeSlider .swiperBox .swiperArrow.swiperPrev {
     left: -24px;
   }
@@ -6960,7 +6972,7 @@ footer .footerIcon a img {
   -webkit-box-shadow: 0 0 24px rgba(0, 0, 0, 0.25);
           box-shadow: 0 0 24px rgba(0, 0, 0, 0.25);
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .login {
     padding: 30px;
   }
@@ -7018,7 +7030,7 @@ footer .footerIcon a img {
   text-align: right;
   font-weight: bold;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .login .formBox:has(.gridBox) .gridBox .formList .formListTitle {
     text-align: left;
     font-size: 1rem;
@@ -7166,7 +7178,7 @@ footer .footerIcon a img {
 .historyTable tr {
   border-bottom: 1px solid #b3b3b3;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .historyTable tr {
     border-color: #97a3b6;
   }
@@ -7517,7 +7529,7 @@ footer .footerIcon a img {
           align-items: center;
   gap: 55px;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .reservation .reservationBlock {
     padding: 30px;
     margin-bottom: 20px;
@@ -7583,7 +7595,7 @@ footer .footerIcon a img {
   font-weight: bold;
   line-height: 1.2;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .reservation .reservationBlock .reservationInfo .dept {
     font-size: 1.25rem;
   }
@@ -7592,7 +7604,7 @@ footer .footerIcon a img {
   font-size: 1.125rem;
   margin-bottom: 4px;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .reservation .reservationBlock .reservationInfo .time {
     font-size: 1rem;
   }
@@ -7603,7 +7615,7 @@ footer .footerIcon a img {
   display: inline-block;
   font-weight: 500;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .reservation .reservationBlock .reservationInfo .status {
     padding: 4px 16px;
   }
@@ -7627,7 +7639,7 @@ footer .footerIcon a img {
   background: #737373;
   color: #fff;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .reservation .reservationBlock .reservationFunction .btn {
     min-width: 150px;
   }
@@ -7686,7 +7698,7 @@ footer .footerIcon a img {
 .pageInfo li {
   width: calc((100% - 32px * (3 - 1)) / 3);
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .pageInfo li {
     width: calc((100% - 32px * (2 - 1)) / 2);
   }
@@ -7761,7 +7773,7 @@ footer .footerIcon a img {
       flex-wrap: wrap;
   gap: 60px;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .errorPage .errorPageContent {
     gap: 30px;
   }
@@ -7771,7 +7783,7 @@ footer .footerIcon a img {
   line-height: 1.5;
   margin: 0 0 30px;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .errorPage .errorPageContent h3 {
     font-size: 2.5rem;
   }
@@ -7790,7 +7802,7 @@ footer .footerIcon a img {
   opacity: 0.8;
   font-weight: 500;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .errorPage .errorPageContent p {
     font-size: 1.5rem;
   }
@@ -7803,7 +7815,7 @@ footer .footerIcon a img {
 .errorPage .errorPageContent p span {
   font-size: 1.5rem;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .errorPage .errorPageContent p span {
     font-size: 1.125rem;
   }
@@ -7816,7 +7828,7 @@ footer .footerIcon a img {
 .errorPage .errorPageContent .pic {
   width: 35%;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .errorPage .errorPageContent .pic {
     width: 100%;
     max-width: 400px;
@@ -7838,7 +7850,7 @@ footer .footerIcon a img {
           justify-content: center;
   gap: 40px;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .errorPage .btnBox {
     gap: 10px;
   }
@@ -7908,7 +7920,7 @@ footer .footerIcon a img {
   display: -ms-flexbox;
   display: flex;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .sitemap .accessKeyDefine .content {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -7924,7 +7936,7 @@ footer .footerIcon a img {
   width: 50%;
   padding: 0 40px;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .sitemap .accessKeyDefine .content .box {
     width: 100%;
     padding: 15px 10px;
@@ -7933,7 +7945,7 @@ footer .footerIcon a img {
 .sitemap .accessKeyDefine .content .box:first-child {
   border-right: 1px solid #dee0e3;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .sitemap .accessKeyDefine .content .box:first-child {
     border-right: none;
     border-bottom: 1px solid #dee0e3;
@@ -8029,7 +8041,7 @@ footer .footerIcon a img {
   width: calc((100% - 24px * (4 - 1)) / 4);
   counter-increment: lv1;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1070px) {
   .sitemap .cascading > ul > li {
     width: calc((100% - 24px * (3 - 1)) / 3);
   }

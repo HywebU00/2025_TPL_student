@@ -40,6 +40,18 @@ header {
     @include screen("notebook") {
       margin-right: 0;
     }
+    button.logoutBtn {
+      background: transparent;
+      text-decoration: underline;
+      font-weight: bold;
+      border-radius: 0;
+      @include screen("notebook") {
+        color: #fff;
+      }
+      &:hover {
+        text-decoration: none;
+      }
+    }
   }
   .navList {
     display: flex;
